@@ -118,7 +118,8 @@
         .hud-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
         .hud-card{background:var(--bg-card);border-radius:16px;overflow:hidden;border:1px solid var(--border-color);transition:transform .3s,border-color .3s}
         .hud-card:hover{transform:translateY(-4px);border-color:rgba(14,165,233,0.25);box-shadow:0 8px 30px rgba(0,0,0,0.06)}
-        .hud-card-preview{aspect-ratio:16/9;background:linear-gradient(135deg,#1e293b,#0f172a);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+        .hud-card-preview{background:linear-gradient(135deg,#1e293b,#0f172a);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:12px}
+        .hud-card-preview img{max-width:100%;max-height:240px;object-fit:contain;border-radius:4px}
         .hud-card-preview .placeholder-text{color:var(--text-muted);font-size:14px;text-align:center;padding:20px}
         .hud-card-preview .placeholder-icon{width:48px;height:48px;stroke:var(--text-muted);margin-bottom:8px;opacity:0.5}
         .hud-card-info{padding:16px 20px}
@@ -344,7 +345,6 @@
                 <p data-i18n="feat5_desc">通过可视化时间轴，精确对齐 GPX 时间戳与视频时间。支持播放预览确认同步效果，可随时撤销对齐重新调整，确保数据与画面完美匹配。</p>
             </div>
             <div class="feature-card fade-in">
-                <span class="feature-soon-badge" data-i18n="dm_coming_soon">即将上线</span>
                 <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
                 <h3 data-i18n="feat6_title">GoPro GPS 自动提取</h3>
                 <p data-i18n="feat6_desc">导入 GoPro 视频时自动检测并提取内嵌 GPS 数据，无需单独导入 GPX 文件。自动计算时间偏移并同步，也支持将 GoPro GPS 作为轨迹地图数据源。</p>
@@ -377,7 +377,6 @@
                 </div>
             </div>
             <div class="dm-card fade-in">
-                <span class="dm-soon-badge" data-i18n="dm_coming_soon">即将上线</span>
                 <div class="dm-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
                 <div class="dm-card-step">02</div>
                 <h3 data-i18n="dm1_title">GoPro GPS 自动提取</h3>
@@ -388,7 +387,6 @@
                 </div>
             </div>
             <div class="dm-card fade-in">
-                <span class="dm-soon-badge" data-i18n="dm_coming_soon">即将上线</span>
                 <div class="dm-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/><path d="M8 8l4 4 4-4"/></svg></div>
                 <div class="dm-card-step">03</div>
                 <h3 data-i18n="dm2_title">GPX 增强 + 自动对齐</h3>
@@ -567,11 +565,11 @@ const i18n = {
         feat1_title: '实时数据同步',
         feat1_desc: 'GPX 数据与视频帧精确同步，速度、海拔、心率等数据随画面实时变化，确保每一帧都准确无误。',
         feat2_title: '多面板自由组合',
-        feat2_desc: '速度表、海拔图、轨迹地图、六边形数据面板……多种 HUD 面板可同时叠加，自由搭配，打造专属布局。',
+        feat2_desc: '现代条形速度表、经典表盘、数字面板、海拔图、轨迹地图、六边形数据面板、数据极客面板……多种 HUD 面板可同时叠加，自由搭配，打造专属布局。',
         feat3_title: '自定义强调色',
         feat3_desc: '每种 HUD 风格都支持自定义强调色，一键切换颜色主题，让 HUD 与视频画面完美融合。',
         feat4_title: '轨迹地图叠加',
-        feat4_desc: '在视频上叠加 GPS 轨迹地图，支持高德地图和 Apple 地图，可切换地图区域。当前位置以箭头指示，方向沿路径切线，转弯时平滑旋转。',
+        feat4_desc: '在视频上叠加 GPS 轨迹地图，支持 Apple 地图，可切换地图区域。当前位置以箭头指示，方向沿路径切线，转弯时平滑旋转。',
         feat5_title: '精确时间对齐',
         feat5_desc: '通过可视化时间轴，精确对齐 GPX 时间戳与视频时间。支持播放预览确认同步效果，可随时撤销对齐重新调整，确保数据与画面完美匹配。',
         feat6_title: 'GoPro GPS 自动提取',
@@ -596,7 +594,7 @@ const i18n = {
         dm3_tag2: '手动精确对齐',
         hud_badge: 'HUD 风格',
         hud_title: '精美 HUD 风格库',
-        hud_subtitle: '8 大类别 40+ 种风格任你选择',
+        hud_subtitle: '7 大类别 50+ 种风格任你选择',
         data_badge: '数据指标',
         data_title: '全方位运动数据展示',
         data_subtitle: '支持多种运动数据类型，公制/英制自由切换',
@@ -672,11 +670,11 @@ const i18n = {
         feat1_title: 'Real-Time Data Sync',
         feat1_desc: 'GPX data synced precisely with video frames. Speed, altitude, heart rate and more update in real time — every frame is accurate.',
         feat2_title: 'Multi-Panel Layout',
-        feat2_desc: 'Speedometers, elevation charts, track maps, hex data panels… Stack multiple HUD panels simultaneously and create your own layout.',
+        feat2_desc: 'Modern bar speedometers, classic dials, digital panels, elevation charts, track maps, hex data panels, data nerd panels… Stack multiple HUD panels simultaneously and create your own layout.',
         feat3_title: 'Custom Accent Colors',
         feat3_desc: 'Every HUD style supports custom accent colors. Switch color themes with one click to blend HUD seamlessly with your footage.',
         feat4_title: 'Track Map Overlay',
-        feat4_desc: 'Overlay GPS track maps on your video. Supports Amap and Apple Maps with switchable regions. Current position shown as an arrow pointing along the path tangent, rotating smoothly through turns.',
+        feat4_desc: 'Overlay GPS track maps on your video. Supports Apple Maps with switchable regions. Current position shown as an arrow pointing along the path tangent, rotating smoothly through turns.',
         feat5_title: 'Precise Time Alignment',
         feat5_desc: 'Use the visual timeline to precisely align GPX timestamps with video time. Preview playback to confirm sync, undo and re-adjust anytime for a perfect match.',
         feat6_title: 'GoPro GPS Auto-Extract',
@@ -701,7 +699,7 @@ const i18n = {
         dm3_tag2: 'Manual Precision Align',
         hud_badge: 'HUD Styles',
         hud_title: 'Stunning HUD Style Library',
-        hud_subtitle: '8 categories, 40+ styles to choose from',
+        hud_subtitle: '7 categories, 50+ styles to choose from',
         data_badge: 'Metrics',
         data_title: 'Comprehensive Sports Data Display',
         data_subtitle: 'Support for multiple data types with metric/imperial switching',
@@ -741,6 +739,7 @@ const i18n = {
         cat_hex: 'Hexagon',
         cat_elevation: 'Elevation',
         cat_track: 'Track Map',
+        cat_data_nerd: 'Data Nerd',
     }
 };
 
@@ -751,7 +750,9 @@ const hudData = {
         { name: 'Mecha Vector', desc_zh: '机甲矢量风格', desc_en: 'Mecha Vector HUD', img: 'images/hud/modern-bar/mecha-vector.png' },
         { name: 'F1 Telemetry', desc_zh: 'F1 遥测风格', desc_en: 'F1 Telemetry Bar', img: 'images/hud/modern-bar/f1-telemetry.png' },
         { name: 'Minimalist Slash', desc_zh: '极简斜杠风格', desc_en: 'Minimalist Slash Bar', img: 'images/hud/modern-bar/minimalist-slash.png' },
-        { name: 'Plasma Railgun', desc_zh: '等离子轨道炮风格', desc_en: 'Plasma Railgun Style', img: 'images/hud/modern-bar/plasma-railgun.png' },
+        { name: 'Cyber Blade', desc_zh: '赛博光刃风格', desc_en: 'Cyber Blade Bar', img: 'images/hud/modern-bar/cyber-blade.png' },
+        { name: 'Tactical Array', desc_zh: '战术机甲风格', desc_en: 'Tactical Array Bar', img: 'images/hud/modern-bar/tactical-array.png' },
+        { name: 'Aero Capsule', desc_zh: '航空胶囊风格', desc_en: 'Aero Capsule Bar', img: 'images/hud/modern-bar/aero-capsule.png' },
     ],
     'classic-dial': [
         { name: 'Classic', desc_zh: '经典表盘风格', desc_en: 'Classic Dial', img: 'images/hud/classic-dial/classic.png' },
@@ -764,28 +765,50 @@ const hudData = {
         { name: 'Minimalist Volt', desc_zh: '极简荧光风格', desc_en: 'Minimalist Volt Dial', img: 'images/hud/classic-dial/minimalist-volt.png' },
         { name: 'Aviator Instrument', desc_zh: '飞行仪表风格', desc_en: 'Aviator Instrument', img: 'images/hud/classic-dial/aviator-instrument.png' },
         { name: 'Spatial Glass', desc_zh: '空间毛玻璃风格', desc_en: 'Spatial Glass Dial', img: 'images/hud/classic-dial/spatial-glass.png' },
+        { name: 'Creamy Donut', desc_zh: '奶油甜甜圈风格', desc_en: 'Creamy Donut Dial', img: 'images/hud/classic-dial/creamy-donut.png' },
+        { name: 'Stealth Chrono', desc_zh: '幽灵计时码表风格', desc_en: 'Stealth Chrono Dial', img: 'images/hud/classic-dial/stealth-chrono.png' },
+        { name: 'Holographic Halo', desc_zh: '全息光环风格', desc_en: 'Holographic Halo Dial', img: 'images/hud/classic-dial/holographic-halo.png' },
+        { name: 'Heritage Brass', desc_zh: '黄铜机械表风格', desc_en: 'Heritage Brass Dial', img: 'images/hud/classic-dial/heritage-brass.png' },
+        { name: 'Pixel Matrix', desc_zh: '像素点阵风格', desc_en: 'Pixel Matrix Dial', img: 'images/hud/classic-dial/pixel-matrix.png' },
     ],
     'digital': [
         { name: 'Cinematic Minimal', desc_zh: '电影极简风格', desc_en: 'Cinematic Minimal Display', img: 'images/hud/digital/cinematic-minimal.png' },
         { name: 'Tactical OSD', desc_zh: '战术 OSD 风格', desc_en: 'Tactical OSD Panel', img: 'images/hud/digital/tactical-osd.png' },
         { name: 'Glass Widget', desc_zh: '玻璃组件风格', desc_en: 'Glass Widget Display', img: 'images/hud/digital/glass-widget.png' },
+        { name: 'Polaroid Card', desc_zh: '拍立得卡片风格', desc_en: 'Polaroid Card Display', img: 'images/hud/digital/polaroid-card.png' },
+        { name: 'Flip Lock', desc_zh: '翻页锁风格', desc_en: 'Flip Lock Display', img: 'images/hud/digital/flip-lock.png' },
+        { name: 'Rally Odometer', desc_zh: '拉力码表风格', desc_en: 'Rally Odometer Display', img: 'images/hud/digital/rally-odometer.png' },
+        { name: 'Dash LCD', desc_zh: '超跑液晶风格', desc_en: 'Dash LCD Display', img: 'images/hud/digital/dash-lcd.png' },
     ],
     'hex': [
         { name: 'visionOS Glass', desc_zh: 'visionOS 玻璃风格', desc_en: 'visionOS Glass Panel', img: 'images/hud/hex/visionos-glass.png' },
         { name: 'Cyber Mecha', desc_zh: '赛博机甲风格', desc_en: 'Cyber Mecha Hex', img: 'images/hud/hex/cyber-mecha.png' },
         { name: 'Pro Telemetry', desc_zh: '专业遥测风格', desc_en: 'Pro Telemetry Hex', img: 'images/hud/hex/pro-telemetry.png' },
+        { name: 'Sci-Fi Hologram', desc_zh: '科幻全息投影风格', desc_en: 'Sci-Fi Hologram Hex', img: 'images/hud/hex/scifi-hologram.png' },
+        { name: 'Soft Squircle', desc_zh: '柔和皂角六边形风格', desc_en: 'Soft Squircle Hex', img: 'images/hud/hex/soft-squircle.png' },
     ],
     'elevation': [
         { name: 'Classic', desc_zh: '经典海拔图风格', desc_en: 'Classic Elevation', img: 'images/hud/elevation/classic.png' },
         { name: 'Cinematic Fade', desc_zh: '电影渐变风格', desc_en: 'Cinematic Fade Chart', img: 'images/hud/elevation/cinematic-fade.png' },
         { name: 'Pro Wireframe', desc_zh: '专业线框风格', desc_en: 'Pro Wireframe Chart', img: 'images/hud/elevation/pro-wireframe.png' },
         { name: 'Holographic Scan', desc_zh: '全息扫描风格', desc_en: 'Holographic Scan Chart', img: 'images/hud/elevation/holographic-scan.png' },
+        { name: 'Soft Dreamy', desc_zh: '柔和梦幻风格', desc_en: 'Soft Dreamy Chart', img: 'images/hud/elevation/soft-dreamy.png' },
     ],
     'track': [
         { name: 'Classic', desc_zh: '经典轨迹风格', desc_en: 'Classic Track Map', img: 'images/hud/track/classic.png' },
         { name: 'Glass Explorer', desc_zh: '玻璃探索者风格', desc_en: 'Glass Explorer Map', img: 'images/hud/track/glass-explorer.png' },
         { name: 'Tactical Radar', desc_zh: '战术雷达风格', desc_en: 'Tactical Radar Map', img: 'images/hud/track/tactical-radar.png' },
         { name: 'Pro Racing', desc_zh: '专业竞速风格', desc_en: 'Pro Racing Map', img: 'images/hud/track/pro-racing.png' },
+        { name: 'Hologram Blueprint', desc_zh: '全息蓝图风格', desc_en: 'Hologram Blueprint Map', img: 'images/hud/track/hologram-blueprint.png' },
+        { name: 'Retro Matrix', desc_zh: '复古点阵风格', desc_en: 'Retro Matrix Map', img: 'images/hud/track/retro-matrix.png' },
+        { name: 'Aurora Neon', desc_zh: '幻彩霓虹风格', desc_en: 'Aurora Neon Map', img: 'images/hud/track/aurora-neon.png' },
+        { name: 'Frosted Dewdrop', desc_zh: '晨露磨砂风格', desc_en: 'Frosted Dewdrop Map', img: 'images/hud/track/frosted-dewdrop.png' },
+        { name: 'Polaroid Journey', desc_zh: '拍立得相纸风格', desc_en: 'Polaroid Journey Map', img: 'images/hud/track/polaroid-journey.png' },
+    ],
+    'data-nerd': [
+        { name: 'Slipspace Console', desc_zh: '超光速飞船控制台风格', desc_en: 'Slipspace Console', img: 'images/hud/data-nerd/slipspace-console.png' },
+        { name: 'Le Tour Dashboard', desc_zh: '环法专业底栏风格', desc_en: 'Le Tour Dashboard', img: 'images/hud/data-nerd/le-tour-dashboard.png' },
+        { name: 'Space UI', desc_zh: '太空悬浮胶囊风格', desc_en: 'Space UI', img: 'images/hud/data-nerd/space-ui.png' },
     ],
 };
 
@@ -796,6 +819,7 @@ const catKeys = {
     'hex': 'cat_hex',
     'elevation': 'cat_elevation',
     'track': 'cat_track',
+    'data-nerd': 'cat_data_nerd',
 };
 
 let activeCategory = 'modern-bar';
@@ -823,7 +847,7 @@ function renderGallery() {
     gallery.innerHTML = items.map(item => {
         const desc = currentLang === 'zh' ? item.desc_zh : item.desc_en;
         const previewContent = item.img
-            ? `<img src="${item.img}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-text" style="display:none;flex-direction:column;align-items:center"><svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>${desc}</div>`
+            ? `<img src="${item.img}" alt="${item.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-text" style="display:none;flex-direction:column;align-items:center"><svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>${desc}</div>`
             : `<div class="placeholder-text" style="display:flex;flex-direction:column;align-items:center"><svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>${desc}</div>`;
         return `
         <div class="hud-card fade-in visible">
