@@ -537,6 +537,16 @@
                     <div class="faq-answer-inner" data-i18n="faq_a2">GPX Video Editor 对于 GoPro 开启了 GPS 模式录制的视频，会自动抽取视频文件中的 GPMF 元数据，这样即使没有运动手表或码表，也能在 HUD 显示速度、海拔和坡度的计算值以及骑行路径轨迹；如果有运动手表或码表，本 App 独特的算法可以对齐 GoPro 视频和运动手表记录的 GPX 文件信息进行自动对齐并合并，从而叠加显示更多生理和地理信息。</div>
                 </div>
             </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                    <span class="q-icon">Q</span>
+                    <span class="q-text" data-i18n="faq_q3">手动同步快把我逼疯了，有没有更好的方法？</span>
+                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq_a3">大多数遥测工具仍然需要手动对齐。问题在于，即使只有 2~3 秒的偏差，也会让一个急弯看起来完全不对。更可靠的方法是将 GPS 路径与视频画面进行视觉对比，利用道路弯道作为对齐参考点。GPX Video Editor 提供可视化对齐工具，让你通过对比轨迹弯道和视频画面来精确对齐时间轴。</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -682,6 +692,8 @@ const i18n = {
         faq_a1: '可以使用基于 Apple Silicon 原生优化的 GPX Video Editor，完全兼容最新 macOS，运行流畅高效。',
         faq_q2: '手动对齐视频画面帧和 GPX 时间太难了，有没有好的方法？',
         faq_a2: 'GPX Video Editor 对于 GoPro 开启了 GPS 模式录制的视频，会自动抽取视频文件中的 GPMF 元数据，这样即使没有运动手表或码表，也能在 HUD 显示速度、海拔和坡度的计算值以及骑行路径轨迹；如果有运动手表或码表，本 App 独特的算法可以对齐 GoPro 视频和运动手表记录的 GPX 文件信息进行自动对齐并合并，从而叠加显示更多生理和地理信息。',
+        faq_q3: '手动同步快把我逼疯了，有没有更好的方法？',
+        faq_a3: '大多数遥测工具仍然需要手动对齐。问题在于，即使只有 2~3 秒的偏差，也会让一个急弯看起来完全不对。更可靠的方法是将 GPS 路径与视频画面进行视觉对比，利用道路弯道作为对齐参考点。GPX Video Editor 提供可视化对齐工具，让你通过对比轨迹弯道和视频画面来精确对齐时间轴。',
         cat_modern_bar: '现代条形',
         cat_classic_dial: '经典表盘',
         cat_digital: '数字面板',
@@ -795,6 +807,8 @@ const i18n = {
         faq_a1: 'You can use GPX Video Editor, natively optimized for Apple Silicon and fully compatible with the latest macOS — smooth and efficient.',
         faq_q2: 'Manually aligning video frames with GPX timestamps is too hard — is there a better way?',
         faq_a2: 'GPX Video Editor automatically extracts GPMF metadata from GoPro videos recorded with GPS enabled, so even without a sports watch or bike computer, the HUD can display speed, altitude, gradient calculations and the riding route. If you do have a sports watch or bike computer, the app\'s unique algorithm can automatically align and merge the GoPro video with the GPX file from your device, overlaying even more physiological and geographic data.',
+        faq_q3: 'Manual synchronization is driving me crazy. Is there a better way?',
+        faq_a3: 'Most telemetry tools still require manual alignment. The problem is that even a 2~3 second offset can make a sharp corner look completely wrong. A more reliable method is to compare the GPS path visually with the video footage and use road bends as alignment reference points. GPX Video Editor provides a visual alignment tool that lets you precisely align the timeline by comparing track bends with the video frame.',
         cat_modern_bar: 'Modern Bar',
         cat_classic_dial: 'Classic Dial',
         cat_digital: 'Digital',
