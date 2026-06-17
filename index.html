@@ -9,7 +9,7 @@
     <meta name="keywords" content="GPX视频编辑器, 骑行HUD视频, 运动数据叠加, macOS视频工具, 骑行视频制作">
     <!-- English meta tags -->
     <meta name="description" content="Native macOS app that fuses Garmin/Strava GPX track data with video, overlays speed, altitude, power, and heart rate HUDs, and generates professional sports videos in one click.">
-    <meta name="keywords" content="GPX video editor, cycling HUD video, sports data overlay, macOS video tool, cycling video production">
+    <meta name="keywords" content="GPX video editor, cycling HUD video, sports data overlay, macOS video tool, cycling video production, cycling video overlay, bike telemetry overlay, gopro cycling data">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         :root{
@@ -146,6 +146,19 @@
         .data-item h4{font-size:15px;font-weight:700}
         .data-item p{font-size:12px;color:var(--text-muted)}
 
+        .faq-section{background:var(--bg-secondary)}
+        .faq-list{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+        .faq-item{background:var(--bg-card);border-radius:16px;border:1px solid var(--border-color);overflow:hidden;transition:border-color .3s,box-shadow .3s}
+        .faq-item:hover{border-color:rgba(14,165,233,0.2);box-shadow:0 4px 20px rgba(0,0,0,0.04)}
+        .faq-question{display:flex;align-items:center;gap:16px;padding:24px 28px;cursor:pointer;user-select:none}
+        .faq-question .q-icon{width:32px;height:32px;min-width:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(14,165,233,0.1);color:var(--accent-cyan);font-weight:800;font-size:16px}
+        .faq-question .q-text{flex:1;font-size:17px;font-weight:600;color:var(--text-primary)}
+        .faq-question .q-arrow{width:20px;height:20px;transition:transform .3s;color:var(--text-muted)}
+        .faq-item.open .q-arrow{transform:rotate(180deg)}
+        .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
+        .faq-item.open .faq-answer{max-height:500px}
+        .faq-answer-inner{padding:0 28px 24px 76px;font-size:15px;color:var(--text-secondary);line-height:1.8}
+
         .cta-section{text-align:center;padding:120px 0;position:relative;overflow:hidden}
         .cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(14,165,233,0.06),transparent 70%);pointer-events:none}
         .cta-section h2{font-size:42px;font-weight:800;margin-bottom:16px;position:relative}
@@ -212,6 +225,7 @@
                 <li><a href="#features" data-i18n="nav_features">核心功能</a></li>
                 <li><a href="#hud-showcase" data-i18n="nav_hud">HUD 风格</a></li>
                 <li><a href="#export" data-i18n="nav_export">导出</a></li>
+                <li><a href="#faq" data-i18n="nav_faq">常见问题</a></li>
             </ul>
         </div>
         <div class="nav-right">
@@ -495,6 +509,38 @@
     </div>
 </section>
 
+<section class="faq-section" id="faq">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge badge-cyan" data-i18n="faq_badge">常见问题</span>
+            <h2 data-i18n="faq_title">你可能想知道的</h2>
+            <p data-i18n="faq_subtitle">关于 GPX Video Editor 的常见疑问与解答</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item open">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                    <span class="q-icon">Q</span>
+                    <span class="q-text" data-i18n="faq_q1">如果你的 Mac 上 Garmin VIRB Edit 已经不能用了，还有什么选择？</span>
+                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq_a1">可以使用基于 Apple Silicon 原生优化的 GPX Video Editor，完全兼容最新 macOS，运行流畅高效。</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                    <span class="q-icon">Q</span>
+                    <span class="q-text" data-i18n="faq_q2">手动对齐视频画面帧和 GPX 时间太难了，有没有好的方法？</span>
+                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq_a2">GPX Video Editor 对于 GoPro 开启了 GPS 模式录制的视频，会自动抽取视频文件中的 GPMF 元数据，这样即使没有运动手表或码表，也能在 HUD 显示速度、海拔和坡度的计算值以及骑行路径轨迹；如果有运动手表或码表，本 App 独特的算法可以对齐 GoPro 视频和运动手表记录的 GPX 文件信息进行自动对齐并合并，从而叠加显示更多生理和地理信息。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="cta-section" id="cta">
     <div class="container">
         <h2 class="fade-in" data-i18n-html="cta_h2">准备好打造你的<span class="gradient-text" style="background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">专业运动视频</span>了吗？</h2>
@@ -536,6 +582,7 @@ const i18n = {
         nav_features: '核心功能',
         nav_hud: 'HUD 风格',
         nav_export: '导出',
+        nav_faq: '常见问题',
         nav_download: '下载 App',
         hero_h1: '为运动视频<br><span class="gradient-text">注入专业数据</span>',
         hero_desc: '将 GPX 轨迹数据与视频完美融合，用精美的 HUD 叠加层展示速度、功率、海拔、心率等实时数据。支持 GoPro GPS 自动提取，让你的运动视频更具专业质感。',
@@ -628,6 +675,13 @@ const i18n = {
         footer_privacy: '隐私政策',
         footer_terms: '使用条款',
         footer_contact: '联系我们',
+        faq_badge: '常见问题',
+        faq_title: '你可能想知道的',
+        faq_subtitle: '关于 GPX Video Editor 的常见疑问与解答',
+        faq_q1: '如果你的 Mac 上 Garmin VIRB Edit 已经不能用了，还有什么选择？',
+        faq_a1: '可以使用基于 Apple Silicon 原生优化的 GPX Video Editor，完全兼容最新 macOS，运行流畅高效。',
+        faq_q2: '手动对齐视频画面帧和 GPX 时间太难了，有没有好的方法？',
+        faq_a2: 'GPX Video Editor 对于 GoPro 开启了 GPS 模式录制的视频，会自动抽取视频文件中的 GPMF 元数据，这样即使没有运动手表或码表，也能在 HUD 显示速度、海拔和坡度的计算值以及骑行路径轨迹；如果有运动手表或码表，本 App 独特的算法可以对齐 GoPro 视频和运动手表记录的 GPX 文件信息进行自动对齐并合并，从而叠加显示更多生理和地理信息。',
         cat_modern_bar: '现代条形',
         cat_classic_dial: '经典表盘',
         cat_digital: '数字面板',
@@ -641,6 +695,7 @@ const i18n = {
         nav_features: 'Features',
         nav_hud: 'HUD Styles',
         nav_export: 'Export',
+        nav_faq: 'FAQ',
         nav_download: 'Download',
         hero_h1: 'Infuse Your Videos<br><span class="gradient-text">With Pro Data</span>',
         hero_desc: 'Seamlessly blend GPX track data with your videos. Overlay stunning HUD layers showing speed, power, altitude, heart rate and more. GoPro GPS auto-extract supported — give your sports videos a professional edge.',
@@ -733,6 +788,13 @@ const i18n = {
         footer_privacy: 'Privacy Policy',
         footer_terms: 'Terms of Use',
         footer_contact: 'Contact Us',
+        faq_badge: 'FAQ',
+        faq_title: 'You Might Be Wondering',
+        faq_subtitle: 'Common questions and answers about GPX Video Editor',
+        faq_q1: 'If Garmin VIRB Edit no longer works on your Mac, what are the alternatives?',
+        faq_a1: 'You can use GPX Video Editor, natively optimized for Apple Silicon and fully compatible with the latest macOS — smooth and efficient.',
+        faq_q2: 'Manually aligning video frames with GPX timestamps is too hard — is there a better way?',
+        faq_a2: 'GPX Video Editor automatically extracts GPMF metadata from GoPro videos recorded with GPS enabled, so even without a sports watch or bike computer, the HUD can display speed, altitude, gradient calculations and the riding route. If you do have a sports watch or bike computer, the app\'s unique algorithm can automatically align and merge the GoPro video with the GPX file from your device, overlaying even more physiological and geographic data.',
         cat_modern_bar: 'Modern Bar',
         cat_classic_dial: 'Classic Dial',
         cat_digital: 'Digital',
