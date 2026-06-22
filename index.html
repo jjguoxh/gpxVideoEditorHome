@@ -206,6 +206,21 @@
             footer .container{flex-direction:column;gap:16px;text-align:center}
         }
 
+        .devlog-section{background:var(--bg-secondary)}
+        .devlog-entry{background:var(--bg-card);border-radius:24px;border:1px solid var(--border-color);padding:48px;box-shadow:0 4px 20px rgba(0,0,0,0.04)}
+        .devlog-entry:hover{border-color:rgba(14,165,233,0.25)}
+        .devlog-header{margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--border-color)}
+        .devlog-date{display:inline-block;padding:4px 12px;border-radius:6px;font-size:13px;font-weight:600;color:var(--accent-cyan);background:rgba(14,165,233,0.08);margin-bottom:16px}
+        .devlog-title{font-size:28px;font-weight:800;color:var(--text-primary);margin-bottom:8px;line-height:1.3}
+        .devlog-content{font-size:15px;color:var(--text-secondary);line-height:1.9}
+        .devlog-content h4{font-size:17px;font-weight:700;color:var(--text-primary);margin:28px 0 14px}
+        .devlog-content h4:first-child{margin-top:0}
+        .devlog-content h5{font-size:15px;font-weight:600;color:var(--accent-cyan);margin:20px 0 10px}
+        .devlog-content p{margin-bottom:14px}
+        .devlog-content ul{margin:14px 0;padding-left:20px}
+        .devlog-content li{margin-bottom:10px}
+        .devlog-content strong{color:var(--text-primary);font-weight:700}
+
         .fade-in{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
         .fade-in.visible{opacity:1;transform:translateY(0)}
     </style>
@@ -226,6 +241,7 @@
                 <li><a href="#hud-showcase" data-i18n="nav_hud">HUD 风格</a></li>
                 <li><a href="#export" data-i18n="nav_export">导出</a></li>
                 <li><a href="#faq" data-i18n="nav_faq">常见问题</a></li>
+                <li><a href="#devlog" data-i18n="nav_devlog">开发日志</a></li>
             </ul>
         </div>
         <div class="nav-right">
@@ -551,6 +567,30 @@
     </div>
 </section>
 
+<section class="devlog-section" id="devlog">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-badge badge-cyan" data-i18n="devlog_badge">开发日志</span>
+            <h2 data-i18n="devlog_title">设计背后的思考</h2>
+            <p data-i18n="devlog_subtitle">深入了解每一项功能背后的设计理念与技术挑战</p>
+        </div>
+        <div class="devlog-entry fade-in">
+            <div class="devlog-header">
+                <span class="devlog-date" data-i18n="devlog_entry1_date">2026 · 项目起源</span>
+                <h3 class="devlog-title" data-i18n="devlog_entry1_title">Garmin VIRB Edit 不能用了，怎么办？</h3>
+            </div>
+            <div class="devlog-content" data-i18n-html="devlog_entry1_content"></div>
+        </div>
+        <div class="devlog-entry fade-in">
+            <div class="devlog-header">
+                <span class="devlog-date" data-i18n="devlog_entry2_date">2026 · 功能设计笔记</span>
+                <h3 class="devlog-title" data-i18n="devlog_entry2_title">为什么要开发无人机视角轨迹HUD界面</h3>
+            </div>
+            <div class="devlog-content" data-i18n-html="devlog_entry2_content"></div>
+        </div>
+    </div>
+</section>
+
 <section class="cta-section" id="cta">
     <div class="container">
         <h2 class="fade-in" data-i18n-html="cta_h2">准备好打造你的<span class="gradient-text" style="background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">专业运动视频</span>了吗？</h2>
@@ -594,6 +634,7 @@ const i18n = {
         nav_export: '导出',
         nav_faq: '常见问题',
         nav_download: '下载 App',
+        nav_devlog: '开发日志',
         hero_h1: '为运动视频<br><span class="gradient-text">注入专业数据</span>',
         hero_desc: '将 GPX 轨迹数据与视频完美融合，用精美的 HUD 叠加层展示速度、功率、海拔、心率等实时数据。支持 GoPro GPS 自动提取，让你的运动视频更具专业质感。',
         hero_btn_download: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> 下载 macOS 版',
@@ -694,6 +735,15 @@ const i18n = {
         faq_a2: 'GPX Video Editor 对于 GoPro 开启了 GPS 模式录制的视频，会自动抽取视频文件中的 GPMF 元数据，这样即使没有运动手表或码表，也能在 HUD 显示速度、海拔和坡度的计算值以及骑行路径轨迹；如果有运动手表或码表，本 App 独特的算法可以对齐 GoPro 视频和运动手表记录的 GPX 文件信息进行自动对齐并合并，从而叠加显示更多生理和地理信息。',
         faq_q3: '手动同步快把我逼疯了，有没有更好的方法？',
         faq_a3: '大多数遥测工具仍然需要手动对齐。问题在于，即使只有 2~3 秒的偏差，也会让一个急弯看起来完全不对。更可靠的方法是将 GPS 路径与视频画面进行视觉对比，利用道路弯道作为对齐参考点。GPX Video Editor 提供可视化对齐工具，让你通过对比轨迹弯道和视频画面来精确对齐时间轴。',
+        devlog_badge: '开发日志',
+        devlog_title: '设计背后的思考',
+        devlog_subtitle: '深入了解每一项功能背后的设计理念与技术挑战',
+        devlog_entry1_date: '2026 · 项目起源',
+        devlog_entry1_title: 'Garmin VIRB Edit 不能用了，怎么办？',
+        devlog_entry1_content: '<p>对许多骑行者来说，Garmin VIRB Edit 曾经是完美的工具。</p><p>你可以用 GoPro、Garmin VIRB 或其他运动相机录制骑行，导入码表的 GPX 文件，轻松将速度、海拔、心率、踏频、功率和路线信息叠加到视频上。</p><p>它不华丽，但它能用。</p><p>然后，时间向前推进。</p><h4>问题所在</h4><p>几年前，我升级了电脑，发现 VIRB Edit 越来越难用了。</p><p>在 Windows 上，一些用户开始遇到显卡驱动问题和兼容性问题。在新的 Mac 上，尤其是 Apple Silicon 系统，运行 VIRB Edit 变得更加困难。</p><p>更糟糕的是，Garmin 几年前就已经停止开发这款软件了。</p><p>结果呢？</p><p>许多骑行者突然开始问：</p><p><strong>现在用什么？</strong></p><h4>寻找替代方案</h4><p>像许多骑手一样，我开始寻找替代方案。</p><p>有一些选项：</p><ul><li>GoPro Telemetry Overlay</li><li>DJI Studio</li><li>Insta360 Studio</li><li>各种涉及 DaVinci Resolve 或 Final Cut Pro 的视频编辑工作流</li></ul><p>每个方案都在一定程度上有效。</p><p>但我一直遇到同样的困扰。</p><h5>手动同步</h5><p>大多数工作流仍然依赖手动同步视频画面和骑行数据。</p><p>听起来很简单，直到你真正尝试。</p><p>一两秒的偏移看起来可能不重要，但在山地速降或紧凑的发卡弯上，问题立刻显现。</p><p>速度显示一个数值。</p><p>地图显示另一个。</p><p>视频显示完全不同的东西。</p><h5>可视化受限</h5><p>大多数遥测叠加专注于显示数字。</p><p>速度。距离。心率。功率。</p><p>有用的信息，但不一定是讲述骑行故事的最佳方式。</p><p>作为骑行者，我真正想展示的是：</p><ul><li>前方道路的形状</li><li>山地速降的流畅感</li><li>发卡弯的序列</li><li>为什么某段路让人兴奋</li></ul><p>仅靠数字无法捕捉这些。</p><h4>构建自己的解决方案</h4><p>最终，我停止了搜索。</p><p>我决定构建自己的遥测编辑器。</p><p>最初的目标很简单：</p><p><strong>让骑行视频更容易同步，更 enjoyable 观看。</strong></p><p>第一个原型是用 Python 写的。</p><p>令人惊讶的是，它比预期效果更好。</p><p>随着时间推移，它演变成了一个完整的桌面应用程序。</p><h4>解决同步问题</h4><p>我想解决的第一个问题是同步。</p><p>不再完全依赖时间戳，我开始尝试视觉路线匹配。</p><p>发卡弯是完美的对齐标记。</p><p>如果骑手在视频中左转，路线显示也应该左转。</p><p>如果道路进入连续弯道，遥测应该精确匹配。</p><p>任何偏差都会立刻感觉不对。</p><p>最近，我添加了直接从 GoPro 视频文件提取 GPS 信息的支持。</p><p>当 GPS 元数据可用时，软件可以自动对齐录制的路线和视频，大幅减少手动工作量。</p><h4>解决可视化问题</h4><p>第二个挑战是呈现方式。</p><p>我想要更生动的遥测叠加。</p><p>不再只显示数字，我尝试了：</p><ul><li>动态速度表</li><li>海拔剖面图</li><li>路线预览</li><li>功率和心率显示</li><li>沿路线跟随骑手的无人机视角轨迹 HUD</li></ul><p>轨迹 HUD 成了我最喜欢的功能。</p><p>不再显示静态地图，它从俯视角度呈现路线，跟随骑手穿过弯道和速降。</p><p>它终于捕捉到了我一直觉得骑行视频缺失的东西：</p><p><strong>道路本身的形状。</strong></p><h4>我学到了什么</h4><p>构建骑行遥测编辑器教会了我一些意想不到的东西。</p><p>最难的部分不是渲染数字。</p><p>不是视频编码。</p><p>不是 GPS 解析。</p><p>最难的部分是准确呈现骑行的体验。</p><p>每个骑行者都记得某些时刻：</p><p>第一次爬坡。第一次快速速降。那完美的连续发卡弯。让你停下来拍照的风景。</p><p>遥测数据不只是数据。</p><p>它是背景。</p><p>它帮助观众理解为什么一次骑行有意义。</p><h4>所以现在怎么办？</h4><p>如果你是因为 VIRB Edit 在你的系统上不再工作而读到这篇文章，你不是一个人。</p><p>许多骑行者正在寻找替代方案。</p><p>有些人会喜欢简单的工作流。</p><p>其他人可能想要更高级的叠加和路线可视化。</p><p>好消息是，现在有比以往更多的选择。</p><p>对我来说，寻找替代品的旅程最终变成了一个软件项目。</p><p>这一切都始于一个简单的问题：</p><p><strong>Garmin VIRB Edit 不能用了，怎么办？</strong></p>',
+        devlog_entry2_date: '2026 · 功能设计笔记',
+        devlog_entry2_title: '为什么要开发无人机视角轨迹HUD界面',
+        devlog_entry2_content: '<h4>开发背景与现存痛点</h4><p>我在撰写开发日志、对比实测 Garmin VIRB Edit 功能时，发现市面上传统 GPS 轨迹叠加工具存在明显短板：常规二维平面地图 HUD 展示效果生硬，无法直观体现赛道细微走势变化。仅依靠平面轨迹线条，很难一眼判断运动传感数据与实拍视频是否精准时间对齐；除此之外，传统地图叠加界面均缺少路况前瞻提示能力，观众观看运动视频时，无法提前预知前方路况变化。</p><h4>无人机视角轨迹 HUD 核心优势</h4><p><strong>一、可视化校验视频与运动数据对齐精度</strong></p><p>区别于普通俯视平面地图，仿真无人机航拍视角具备立体空间感，能够清晰还原局部真实赛道走势与行车路线。在软件内完成视频与 GPS 运动数据同步校准的过程中，该视角可以直观呈现轨迹、视频画面二者的匹配程度。以往二维地图难以察觉的微小时间偏移、数据错位问题，通过无人机俯视角可以一眼识别，大幅提升视频数据对齐的精准度与调试效率，完美弥补 VIRB Edit 平面地图对齐可视化差的短板。</p><p><strong>二、前瞻预判前方弯道，优化视频观看逻辑</strong></p><p>该视角自带独家前路预览能力，是传统地图 HUD 不具备的核心亮点。视频播放过程中，界面会提前展示前方急弯、连续弯道等关键路况，在实拍镜头还未拍到弯道之前，就提前向观众发出路况预警。观众可以提前做好观看预期，聚焦观察骑手/拍摄者应对急弯的走线、控车操作，让骑行、摩托等运动视频观看更有层次感，观感连贯度大幅提升。</p><h4>整体设计初衷</h4><p>本次无人机视角轨迹 HUD 开发，针对性解决了传统运动数据叠加软件可视化反馈弱、无前瞻路况提示两大痛点。一方面优化开发者调试视频数据对齐的工作效率，另一方面提升普通用户的视频观看体验，补齐了主流运动视频剪辑软件普遍缺失的前路轨迹预览功能短板。</p>',
         cat_modern_bar: '现代条形',
         cat_classic_dial: '经典表盘',
         cat_digital: '数字面板',
@@ -709,6 +759,7 @@ const i18n = {
         nav_export: 'Export',
         nav_faq: 'FAQ',
         nav_download: 'Download',
+        nav_devlog: 'Dev Log',
         hero_h1: 'Infuse Your Videos<br><span class="gradient-text">With Pro Data</span>',
         hero_desc: 'Seamlessly blend GPX track data with your videos. Overlay stunning HUD layers showing speed, power, altitude, heart rate and more. GoPro GPS auto-extract supported — give your sports videos a professional edge.',
         hero_btn_download: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download for macOS',
@@ -809,6 +860,15 @@ const i18n = {
         faq_a2: 'GPX Video Editor automatically extracts GPMF metadata from GoPro videos recorded with GPS enabled, so even without a sports watch or bike computer, the HUD can display speed, altitude, gradient calculations and the riding route. If you do have a sports watch or bike computer, the app\'s unique algorithm can automatically align and merge the GoPro video with the GPX file from your device, overlaying even more physiological and geographic data.',
         faq_q3: 'Manual synchronization is driving me crazy. Is there a better way?',
         faq_a3: 'Most telemetry tools still require manual alignment. The problem is that even a 2~3 second offset can make a sharp corner look completely wrong. A more reliable method is to compare the GPS path visually with the video footage and use road bends as alignment reference points. GPX Video Editor provides a visual alignment tool that lets you precisely align the timeline by comparing track bends with the video frame.',
+        devlog_badge: 'Dev Log',
+        devlog_title: 'Design Insights',
+        devlog_subtitle: 'Dive into the design philosophy and technical challenges behind every feature',
+        devlog_entry1_date: '2026 · Project Origin',
+        devlog_entry1_title: 'Garmin VIRB Edit Stopped Working. What Now?',
+        devlog_entry1_content: '<p>For many cyclists, Garmin VIRB Edit was the perfect tool.</p><p>You could record a ride with a GoPro, Garmin VIRB, or other action camera, import a GPX file from your bike computer, and easily overlay speed, elevation, heart rate, cadence, power, and route information onto your videos.</p><p>It wasn\'t flashy, but it worked.</p><p>Then time moved on.</p><h4>The Problem</h4><p>A few years ago, I upgraded my computer and discovered that VIRB Edit was becoming increasingly difficult to use.</p><p>On Windows, some users began encountering graphics driver issues and compatibility problems. On newer Macs, especially Apple Silicon systems, running VIRB Edit became even more challenging.</p><p>To make matters worse, Garmin had effectively stopped developing the software years earlier.</p><p>The result?</p><p>A lot of cyclists suddenly found themselves asking:</p><p><strong>What do I use now?</strong></p><h4>Looking For Alternatives</h4><p>Like many riders, I started searching for alternatives.</p><p>Some options existed:</p><ul><li>GoPro Telemetry Overlay</li><li>DJI Studio</li><li>Insta360 Studio</li><li>Various video editing workflows involving DaVinci Resolve or Final Cut Pro</li></ul><p>Each solution worked to some degree.</p><p>But I kept running into the same frustrations.</p><h5>Manual Synchronization</h5><p>Most workflows still depended on manually synchronizing video footage with ride data.</p><p>This sounds simple until you try it.</p><p>A one- or two-second offset may seem insignificant, but on a mountain descent or a tight hairpin turn, it becomes immediately obvious.</p><p>The speed says one thing.</p><p>The map says another.</p><p>The video shows something completely different.</p><h5>Limited Visualization</h5><p>Most telemetry overlays focused on displaying numbers.</p><p>Speed.</p><p>Distance.</p><p>Heart rate.</p><p>Power.</p><p>Useful information, but not necessarily the best way to tell the story of a ride.</p><p>As a cyclist, what I really wanted to show was:</p><ul><li>The shape of the road ahead</li><li>The flow of a mountain descent</li><li>The sequence of hairpin turns</li><li>Why a particular section of road felt exciting</li></ul><p>Numbers alone couldn\'t capture that.</p><h4>Building My Own Solution</h4><p>Eventually I stopped searching.</p><p>I decided to build my own telemetry editor.</p><p>The original goal was simple:</p><p><strong>Make ride videos easier to synchronize and more enjoyable to watch.</strong></p><p>The first prototype was written in Python.</p><p>Surprisingly, it worked better than I expected.</p><p>Over time it evolved into a full desktop application.</p><h4>Solving Synchronization</h4><p>One of the first problems I wanted to solve was synchronization.</p><p>Instead of relying entirely on timestamps, I began experimenting with visual route matching.</p><p>Hairpin turns turned out to be perfect alignment markers.</p><p>If the rider is turning left in the video, the route display should also be turning left.</p><p>If the road enters a switchback, the telemetry should match exactly.</p><p>Anything else immediately feels wrong.</p><p>More recently, I added support for extracting GPS information directly from GoPro video files.</p><p>When GPS metadata is available, the software can automatically align the recorded route with the video, dramatically reducing the amount of manual work required.</p><h4>Solving Visualization</h4><p>The second challenge was presentation.</p><p>I wanted telemetry overlays that felt more alive.</p><p>Instead of displaying only numbers, I experimented with:</p><ul><li>Dynamic speedometers</li><li>Elevation profiles</li><li>Route previews</li><li>Power and heart rate displays</li><li>A drone-style track HUD that follows the rider along the route</li></ul><p>The track HUD became my favorite feature.</p><p>Rather than showing a static map, it presents the route from an elevated perspective and follows the rider through corners and descents.</p><p>It finally captured something I always felt was missing from cycling videos:</p><p><strong>The shape of the road itself.</strong></p><h4>What I Learned</h4><p>Building a cycling telemetry editor taught me something unexpected.</p><p>The hardest part wasn\'t rendering numbers.</p><p>It wasn\'t video encoding.</p><p>It wasn\'t GPS parsing.</p><p>The hardest part was accurately representing the experience of riding.</p><p>Every cyclist remembers certain moments:</p><p>The first mountain climb.</p><p>The first fast descent.</p><p>That perfect sequence of switchbacks.</p><p>The view that made you stop and take a photo.</p><p>Telemetry data isn\'t just data.</p><p>It\'s context.</p><p>It\'s what helps viewers understand why a ride mattered.</p><h4>So What Now?</h4><p>If you\'re reading this because VIRB Edit no longer works on your system, you\'re not alone.</p><p>Many cyclists are looking for alternatives.</p><p>Some will prefer a simple workflow.</p><p>Others may want more advanced overlays and route visualizations.</p><p>The good news is that there are now more options available than ever before.</p><p>For me, the search for a replacement ended up becoming a software project of its own.</p><p>And it all started with a simple question:</p><p><strong>Garmin VIRB Edit stopped working. What now?</strong></p>',
+        devlog_entry2_date: '2026 · Feature Design Notes',
+        devlog_entry2_title: 'Why I Built a Drone-Style Track HUD',
+        devlog_entry2_content: '<h4>Background & Pain Point</h4><p>During the function comparison test against Garmin VIRB Edit for my development log, I found a prominent flaw of traditional GPS track overlay tools: flat 2D map HUDs can hardly present subtle track changes intuitively. It is difficult for users to visually judge whether motion telemetry data is perfectly synchronized with recorded video frames only through planar map lines. Meanwhile, conventional map overlays fail to give viewers predictive hints about upcoming road conditions while playing sports videos.</p><h4>Core Advantages of My Drone-Style Track HUD</h4><p><strong>1. Intuitive Visual Verification for Video & Motion Data Alignment</strong></p><p>Different from ordinary top-down flat map displays, the drone-style aerial perspective restores real road tracks and driving routes with stereoscopic local path preview. When synchronizing sports video and GPS telemetry data inside the application, this immersive drone view makes the matching degree between video footage and real-time track data visible at a glance. Developers and users can quickly spot tiny time offset errors that cannot be identified via 2D flat maps, greatly improving the accuracy and efficiency of video-data calibration.</p><p><strong>2. Pre-warning Reminder for Upcoming Complex Road Conditions</strong></p><p>This drone perspective HUD adds a forward-looking preview effect that traditional overlays do not support. It can clearly display upcoming sharp turns, steep curves and other key road segments in advance during video playback. Before the camera footage captures the actual bend, viewers can get an early reminder of incoming challenging road conditions. They can then focus on watching how the shooter navigates the sharp turn correspondingly, bringing a more immersive and logical viewing experience for motorcycling, cycling and other outdoor sports videos.</p><h4>Design Purpose</h4><p>This drone-style track HUD is designed to fix the insufficient visual feedback of traditional map-based data alignment tools. It optimizes both data calibration efficiency for developers and video viewing experience for end users, filling the gap of predictive road condition preview in existing sports video telemetry overlay software.</p>',
         cat_modern_bar: 'Modern Bar',
         cat_classic_dial: 'Classic Dial',
         cat_digital: 'Digital',
