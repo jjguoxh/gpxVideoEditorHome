@@ -156,7 +156,7 @@
         .faq-question .q-arrow{width:20px;height:20px;transition:transform .3s;color:var(--text-muted)}
         .faq-item.open .q-arrow{transform:rotate(180deg)}
         .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
-        .faq-item.open .faq-answer{max-height:1500px}
+        .faq-item.open .faq-answer{max-height:500px}
         .faq-answer-inner{padding:0 28px 24px 76px;font-size:15px;color:var(--text-secondary);line-height:1.8}
 
         .cta-section{text-align:center;padding:120px 0;position:relative;overflow:hidden}
@@ -540,157 +540,27 @@
                     <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a1">可以使用基于 Apple Silicon 原生优化的 GPX Video Editor，完全兼容最新 macOS，运行流畅高效，是 VIRB Edit 的最佳替代方案。</div>
+                    <div class="faq-answer-inner" data-i18n="faq_a1">可以使用基于 Apple Silicon 原生优化的 GPX Video Editor，完全兼容最新 macOS，运行流畅高效。</div>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
                     <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q2">GPX Video Editor 支持哪些运动手表 / 码表导出的 GPX 文件？</span>
+                    <span class="q-text" data-i18n="faq_q2">手动对齐视频画面帧和 GPX 时间太难了，有没有好的方法？</span>
                     <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a2">完美兼容 Garmin 全系列码表、行者和 Strava 导出的标准 GPX 文件，无需转换格式，直接拖拽导入即可自动解析速度、海拔、坡度、里程等运动数据。</div>
+                    <div class="faq-answer-inner" data-i18n="faq_a2">GPX Video Editor 对于 GoPro 开启了 GPS 模式录制的视频，会自动抽取视频文件中的 GPMF 元数据，这样即使没有运动手表或码表，也能在 HUD 显示速度、海拔和坡度的计算值以及骑行路径轨迹；如果有运动手表或码表，本 App 独特的算法可以对齐 GoPro 视频和运动手表记录的 GPX 文件信息进行自动对齐并合并，从而叠加显示更多生理和地理信息。</div>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
                     <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q3">非 Garmin 设备的 GPX 轨迹能和骑行视频自动对齐吗？</span>
+                    <span class="q-text" data-i18n="faq_q3">手动同步快把我逼疯了，有没有更好的方法？</span>
                     <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a3">目前只有 GoPro 在录制时可以在视频中附带 GPMF 元数据实现自动对齐。其他厂商设备录制的视频，可通过运动手表、码表或 Strava 导出的 GPX 数据，在本 App 内与视频帧进行手动对齐，同样能获得完整的数据叠加效果。</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q4">M 系列 Apple Silicon Mac 运行会卡顿、发热吗？</span>
-                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a4">软件为 Apple Silicon 原生编译，充分利用 M 芯片 GPU 加速视频渲染，相比旧版 VIRB Edit 占用内存更低，长时间剪辑骑行长视频也不会明显发热、闪退。</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q5">macOS Ventura / Sonoma 最新系统可以正常安装使用吗？</span>
-                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a5">适配 macOS 13.0 及以上全部新版本，持续跟随系统更新迭代，不会出现 Garmin VIRB Edit 无法打开、崩溃、权限失效等兼容问题。</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q6">软件需要安装额外插件、解码器才能读取视频吗？</span>
-                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a6">不需要，内置完整视频解析内核，开箱即用，不用下载第三方编码工具，避免权限冲突与系统安全弹窗。</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q7">可以自定义骑行 HUD 仪表盘的样式、大小、位置吗？</span>
-                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a7">内置多套运动数据模板，支持自由拖拽仪表盘位置、调整透明度、修改字体颜色；可单独开启 / 关闭速度、海拔、坡度、距离、心率、踏频、功率等数据模块，打造专属视觉风格。</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q8">一次购买后，后续 2.x 版本更新需要额外付费吗？</span>
-                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a8">当前版本内所有迭代更新永久免费，上架 App Store 的新版本可直接更新，无二次订阅、无隐藏付费功能。</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q9">长距离骑行 1 小时以上的大视频文件，软件能流畅处理吗？</span>
-                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a9">针对长时长运动视频做了分段内存优化，1–3 小时骑行素材均可流畅预览、渲染导出，不会出现加载卡死。</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q10">和 Final Cut、Premiere Pro 相比，GPX Video Editor 做骑行视频有什么优势？</span>
-                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a10">专业剪辑软件需要手动安装插件、复杂操作才能加载 GPX；本软件专为骑行户外场景设计，导入素材一键同步轨迹，省去学习复杂剪辑流程，几分钟就能成片。</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q11">Windows 电脑可以使用 GPX Video Editor 吗？</span>
-                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a11">目前为 macOS 专属软件，针对 Apple 设备深度优化；后续会评估跨平台版本更新计划。</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q12">导出的视频可以直接上传抖音、B 站、小红书吗？</span>
-                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a12">支持主流短视频平台分辨率比例（16:9 横屏、9:16 竖屏裁剪），导出格式为通用 MP4，无需二次转码，直接发布。</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q13">支持哪些运动数据类型的 HUD 叠加？</span>
-                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a13">支持速度、功率、海拔、心率、踏频、坡度、距离、累计爬升等多种运动指标，公制 / 英制单位可一键切换。</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q14">GoPro 视频是否需要额外导入 GPX 文件？</span>
-                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a14">不需要。GoPro 开启 GPS 模式录制后，软件会自动抽取视频内 GPMF 元数据解析出速度、海拔、坡度与轨迹，直接在 HUD 显示。如需心率、踏频、功率等更丰富数据，可再叠加运动手表 GPX，软件会自动完成时间对齐。</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q15">渲染导出视频大概需要多久？</span>
-                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a15">在 Apple Silicon Mac 上，1080p 视频通常以 2–4 倍速实时渲染，4K 视频一般 1–2 倍速。具体时长取决于视频分辨率、码率、HUD 面板数量与电脑性能。</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="q-icon">Q</span>
-                    <span class="q-text" data-i18n="faq_q16">软件需要联网才能使用吗？</span>
-                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner" data-i18n="faq_a16">基础剪辑与 GPX 叠加均可离线完成，无需登录；仅地图轨迹图层在需要实时地图瓦片时会联网，已渲染缓存的地图可离线查看。</div>
+                    <div class="faq-answer-inner" data-i18n="faq_a3">大多数遥测工具仍然需要手动对齐。问题在于，即使只有 2~3 秒的偏差，也会让一个急弯看起来完全不对。更可靠的方法是将 GPS 路径与视频画面进行视觉对比，利用道路弯道作为对齐参考点。GPX Video Editor 提供可视化对齐工具，让你通过对比轨迹弯道和视频画面来精确对齐时间轴。</div>
                 </div>
             </div>
         </div>
@@ -717,6 +587,13 @@
                 <h3 class="devlog-title" data-i18n="devlog_entry2_title">为什么要开发无人机视角轨迹HUD界面</h3>
             </div>
             <div class="devlog-content" data-i18n-html="devlog_entry2_content"></div>
+        </div>
+        <div class="devlog-entry fade-in">
+            <div class="devlog-header">
+                <span class="devlog-date" data-i18n="devlog_entry3_date">2026 · 真实的起点</span>
+                <h3 class="devlog-title" data-i18n="devlog_entry3_title">那个发卡弯改变了一切</h3>
+            </div>
+            <div class="devlog-content" data-i18n-html="devlog_entry3_content"></div>
         </div>
     </div>
 </section>
@@ -860,7 +737,6 @@ const i18n = {
         faq_title: '你可能想知道的',
         faq_subtitle: '关于 GPX Video Editor 的常见疑问与解答',
         faq_q1: '如果你的 Mac 上 Garmin VIRB Edit 已经不能用了，还有什么选择？',
-<<<<<<< HEAD
         faq_a1: '可以使用基于 Apple Silicon 原生优化的 GPX Video Editor，完全兼容最新 macOS，运行流畅高效。',
         faq_q2: '手动对齐视频画面帧和 GPX 时间太难了，有没有好的方法？',
         faq_a2: 'GPX Video Editor 对于 GoPro 开启了 GPS 模式录制的视频，会自动抽取视频文件中的 GPMF 元数据，这样即使没有运动手表或码表，也能在 HUD 显示速度、海拔和坡度的计算值以及骑行路径轨迹；如果有运动手表或码表，本 App 独特的算法可以对齐 GoPro 视频和运动手表记录的 GPX 文件信息进行自动对齐并合并，从而叠加显示更多生理和地理信息。',
@@ -875,39 +751,9 @@ const i18n = {
         devlog_entry2_date: '2026 · 功能设计笔记',
         devlog_entry2_title: '为什么要开发无人机视角轨迹HUD界面',
         devlog_entry2_content: '<h4>开发背景与现存痛点</h4><p>我在撰写开发日志、对比实测 Garmin VIRB Edit 功能时，发现市面上传统 GPS 轨迹叠加工具存在明显短板：常规二维平面地图 HUD 展示效果生硬，无法直观体现赛道细微走势变化。仅依靠平面轨迹线条，很难一眼判断运动传感数据与实拍视频是否精准时间对齐；除此之外，传统地图叠加界面均缺少路况前瞻提示能力，观众观看运动视频时，无法提前预知前方路况变化。</p><h4>无人机视角轨迹 HUD 核心优势</h4><p><strong>一、可视化校验视频与运动数据对齐精度</strong></p><p>区别于普通俯视平面地图，仿真无人机航拍视角具备立体空间感，能够清晰还原局部真实赛道走势与行车路线。在软件内完成视频与 GPS 运动数据同步校准的过程中，该视角可以直观呈现轨迹、视频画面二者的匹配程度。以往二维地图难以察觉的微小时间偏移、数据错位问题，通过无人机俯视角可以一眼识别，大幅提升视频数据对齐的精准度与调试效率，完美弥补 VIRB Edit 平面地图对齐可视化差的短板。</p><p><strong>二、前瞻预判前方弯道，优化视频观看逻辑</strong></p><p>该视角自带独家前路预览能力，是传统地图 HUD 不具备的核心亮点。视频播放过程中，界面会提前展示前方急弯、连续弯道等关键路况，在实拍镜头还未拍到弯道之前，就提前向观众发出路况预警。观众可以提前做好观看预期，聚焦观察骑手/拍摄者应对急弯的走线、控车操作，让骑行、摩托等运动视频观看更有层次感，观感连贯度大幅提升。</p><h4>整体设计初衷</h4><p>本次无人机视角轨迹 HUD 开发，针对性解决了传统运动数据叠加软件可视化反馈弱、无前瞻路况提示两大痛点。一方面优化开发者调试视频数据对齐的工作效率，另一方面提升普通用户的视频观看体验，补齐了主流运动视频剪辑软件普遍缺失的前路轨迹预览功能短板。</p>',
-=======
-        faq_a1: '可以使用基于 Apple Silicon 原生优化的 GPX Video Editor，完全兼容最新 macOS，运行流畅高效，是 VIRB Edit 的最佳替代方案。',
-        faq_q2: 'GPX Video Editor 支持哪些运动手表 / 码表导出的 GPX 文件？',
-        faq_a2: '完美兼容 Garmin 全系列码表、行者和 Strava 导出的标准 GPX 文件，无需转换格式，直接拖拽导入即可自动解析速度、海拔、坡度、里程等运动数据。',
-        faq_q3: '非 Garmin 设备的 GPX 轨迹能和骑行视频自动对齐吗？',
-        faq_a3: '目前只有 GoPro 在录制时可以在视频中附带 GPMF 元数据实现自动对齐。其他厂商设备录制的视频，可通过运动手表、码表或 Strava 导出的 GPX 数据，在本 App 内与视频帧进行手动对齐，同样能获得完整的数据叠加效果。',
-        faq_q4: 'M 系列 Apple Silicon Mac 运行会卡顿、发热吗？',
-        faq_a4: '软件为 Apple Silicon 原生编译，充分利用 M 芯片 GPU 加速视频渲染，相比旧版 VIRB Edit 占用内存更低，长时间剪辑骑行长视频也不会明显发热、闪退。',
-        faq_q5: 'macOS Ventura / Sonoma 最新系统可以正常安装使用吗？',
-        faq_a5: '适配 macOS 13.0 及以上全部新版本，持续跟随系统更新迭代，不会出现 Garmin VIRB Edit 无法打开、崩溃、权限失效等兼容问题。',
-        faq_q6: '软件需要安装额外插件、解码器才能读取视频吗？',
-        faq_a6: '不需要，内置完整视频解析内核，开箱即用，不用下载第三方编码工具，避免权限冲突与系统安全弹窗。',
-        faq_q7: '可以自定义骑行 HUD 仪表盘的样式、大小、位置吗？',
-        faq_a7: '内置多套运动数据模板，支持自由拖拽仪表盘位置、调整透明度、修改字体颜色；可单独开启 / 关闭速度、海拔、坡度、距离、心率、踏频、功率等数据模块，打造专属视觉风格。',
-        faq_q8: '一次购买后，后续 2.x 版本更新需要额外付费吗？',
-        faq_a8: '当前版本内所有迭代更新永久免费，上架 App Store 的新版本可直接更新，无二次订阅、无隐藏付费功能。',
-        faq_q9: '长距离骑行 1 小时以上的大视频文件，软件能流畅处理吗？',
-        faq_a9: '针对长时长运动视频做了分段内存优化，1–3 小时骑行素材均可流畅预览、渲染导出，不会出现加载卡死。',
-        faq_q10: '和 Final Cut、Premiere Pro 相比，GPX Video Editor 做骑行视频有什么优势？',
-        faq_a10: '专业剪辑软件需要手动安装插件、复杂操作才能加载 GPX；本软件专为骑行户外场景设计，导入素材一键同步轨迹，省去学习复杂剪辑流程，几分钟就能成片。',
-        faq_q11: 'Windows 电脑可以使用 GPX Video Editor 吗？',
-        faq_a11: '目前为 macOS 专属软件，针对 Apple 设备深度优化；后续会评估跨平台版本更新计划。',
-        faq_q12: '导出的视频可以直接上传抖音、B 站、小红书吗？',
-        faq_a12: '支持主流短视频平台分辨率比例（16:9 横屏、9:16 竖屏裁剪），导出格式为通用 MP4，无需二次转码，直接发布。',
-        faq_q13: '支持哪些运动数据类型的 HUD 叠加？',
-        faq_a13: '支持速度、功率、海拔、心率、踏频、坡度、距离、累计爬升等多种运动指标，公制 / 英制单位可一键切换。',
-        faq_q14: 'GoPro 视频是否需要额外导入 GPX 文件？',
-        faq_a14: '不需要。GoPro 开启 GPS 模式录制后，软件会自动抽取视频内 GPMF 元数据解析出速度、海拔、坡度与轨迹，直接在 HUD 显示。如需心率、踏频、功率等更丰富数据，可再叠加运动手表 GPX，软件会自动完成时间对齐。',
-        faq_q15: '渲染导出视频大概需要多久？',
-        faq_a15: '在 Apple Silicon Mac 上，1080p 视频通常以 2–4 倍速实时渲染，4K 视频一般 1–2 倍速。具体时长取决于视频分辨率、码率、HUD 面板数量与电脑性能。',
-        faq_q16: '软件需要联网才能使用吗？',
-        faq_a16: '基础剪辑与 GPX 叠加均可离线完成，无需登录；仅地图轨迹图层在需要实时地图瓦片时会联网，已渲染缓存的地图可离线查看。',
->>>>>>> 680f5fb08739c1ccadaf93c34f533005570440a5
+        devlog_entry3_date: '2026 · 真实的起点',
+        devlog_entry3_title: '那个发卡弯改变了一切',
+        devlog_entry3_content: '<p>我并不是因为想写软件才开始构建骑行遥测编辑器的。</p><p>我是因为山路上一个弯道开始的。</p><h4>无法捕捉的时刻</h4><p>那是一次普通的骑行。</p><p>一条熟悉的下坡路。</p><p>没什么特别的——直到那个发卡弯。</p><p>你知道那种感觉：</p><ul><li>弯前用力刹车</li><li>道路微微下沉</li><li>你压入弯道</li><li>世界突然围绕你旋转</li></ul><p>几秒钟内，所有东西都被压缩了：速度、重力、方向、寂静。</p><p>那是让你想：</p><p><strong>"这就是我骑行的原因。"</strong></p><h4>然后我看了视频</h4><p>那天晚些时候，我检查了录像。</p><p>有些东西不对劲。</p><p>弯道在那里。</p><p>道路在那里。</p><p>运动在那里。</p><p>但感觉消失了。</p><p>它看起来很平。</p><p>几乎无聊。</p><p>就像任何其他道路上的任何其他弯道。</p><p>那种脱节感一直留在我心里。</p><h4>真正的问题</h4><p>骑行视频不是因为分辨率低而失败。</p><p>它们因为失去背景而失败。</p><p>骑行者不会把道路体验为：</p><ul><li>数字</li><li>时间戳</li><li>GPS点</li></ul><p>骑行者体验的是：</p><ul><li>弯前的期待</li><li>转弯时的紧张</li><li>出弯时的释放</li><li>对接下来会发生什么的感知</li></ul><p>这些在普通视频里都不存在。</p><h4>我试图修复它</h4><p>起初，我以为解决方案很简单：</p><p>叠加一些数据。</p><p>速度。海拔。地图。</p><p>但它没有解决问题。</p><p>因为真正的问题不是缺少数据。</p><p>而是缺少结构。</p><p>视频展示了运动，但没有展示几何。</p><h4>改变一切的想法</h4><p>然后我有一个简单的想法：</p><p><strong>如果观众能以骑行者感受道路的方式看到道路呢？</strong></p><p>不是静态地图。</p><p>而是跟随你移动的动态路径。</p><p>就像无人机跟着你骑行。</p><p>不是在后面。</p><p>不是在前面。</p><p>而是与运动本身对齐。</p><p>那个想法成了我的第一个轨迹路径HUD。</p><h4>发卡弯作为测试</h4><p>发卡弯成了终极测试。</p><p>如果系统稍有偏差：</p><ul><li>转弯感觉不对</li><li>幻觉立刻破裂</li></ul><p>如果完美对齐：</p><ul><li>观众突然理解了骑行</li></ul><p>不是理性的理解。</p><p>而是视觉的理解。</p><p>那一刻我意识到：</p><p><strong>这不是数据叠加。</strong></p><p><strong>这是重构体验。</strong></p><h4>从一个弯道开始</h4><p>那次下坡最终导致了：</p><ul><li>GPS-视频同步系统</li><li>自动GoPro GPS提取</li><li>无人机风格轨迹路径HUD</li><li>海拔和路线可视化</li><li>完整的骑行遥测编辑器</li></ul><p>但这一切都不是作为产品想法开始的。</p><p>它始于一个我无法在屏幕上展示的感觉。</p><h4>真正的开始</h4><p>人们经常问这个项目是什么启发的。</p><p>诚实的答案很简单：</p><p>不是灵感。</p><p>是挫败感。</p><p>一个发卡弯让我意识到：</p><p><strong>我体验的骑行和我录制的视频描述的是两个完全不同的世界。</strong></p><p>我决定构建连接它们的桥梁。</p>',
         cat_modern_bar: '现代条形',
         cat_classic_dial: '经典表盘',
         cat_digital: '数字面板',
@@ -1019,7 +865,6 @@ const i18n = {
         faq_title: 'You Might Be Wondering',
         faq_subtitle: 'Common questions and answers about GPX Video Editor',
         faq_q1: 'If Garmin VIRB Edit no longer works on your Mac, what are the alternatives?',
-<<<<<<< HEAD
         faq_a1: 'You can use GPX Video Editor, natively optimized for Apple Silicon and fully compatible with the latest macOS — smooth and efficient.',
         faq_q2: 'Manually aligning video frames with GPX timestamps is too hard — is there a better way?',
         faq_a2: 'GPX Video Editor automatically extracts GPMF metadata from GoPro videos recorded with GPS enabled, so even without a sports watch or bike computer, the HUD can display speed, altitude, gradient calculations and the riding route. If you do have a sports watch or bike computer, the app\'s unique algorithm can automatically align and merge the GoPro video with the GPX file from your device, overlaying even more physiological and geographic data.',
@@ -1034,39 +879,9 @@ const i18n = {
         devlog_entry2_date: '2026 · Feature Design Notes',
         devlog_entry2_title: 'Why I Built a Drone-Style Track HUD',
         devlog_entry2_content: '<h4>Background & Pain Point</h4><p>During the function comparison test against Garmin VIRB Edit for my development log, I found a prominent flaw of traditional GPS track overlay tools: flat 2D map HUDs can hardly present subtle track changes intuitively. It is difficult for users to visually judge whether motion telemetry data is perfectly synchronized with recorded video frames only through planar map lines. Meanwhile, conventional map overlays fail to give viewers predictive hints about upcoming road conditions while playing sports videos.</p><h4>Core Advantages of My Drone-Style Track HUD</h4><p><strong>1. Intuitive Visual Verification for Video & Motion Data Alignment</strong></p><p>Different from ordinary top-down flat map displays, the drone-style aerial perspective restores real road tracks and driving routes with stereoscopic local path preview. When synchronizing sports video and GPS telemetry data inside the application, this immersive drone view makes the matching degree between video footage and real-time track data visible at a glance. Developers and users can quickly spot tiny time offset errors that cannot be identified via 2D flat maps, greatly improving the accuracy and efficiency of video-data calibration.</p><p><strong>2. Pre-warning Reminder for Upcoming Complex Road Conditions</strong></p><p>This drone perspective HUD adds a forward-looking preview effect that traditional overlays do not support. It can clearly display upcoming sharp turns, steep curves and other key road segments in advance during video playback. Before the camera footage captures the actual bend, viewers can get an early reminder of incoming challenging road conditions. They can then focus on watching how the shooter navigates the sharp turn correspondingly, bringing a more immersive and logical viewing experience for motorcycling, cycling and other outdoor sports videos.</p><h4>Design Purpose</h4><p>This drone-style track HUD is designed to fix the insufficient visual feedback of traditional map-based data alignment tools. It optimizes both data calibration efficiency for developers and video viewing experience for end users, filling the gap of predictive road condition preview in existing sports video telemetry overlay software.</p>',
-=======
-        faq_a1: 'You can use GPX Video Editor, natively optimized for Apple Silicon and fully compatible with the latest macOS. It runs smoothly and efficiently and is the best VIRB Edit replacement.',
-        faq_q2: 'Which sports watches / bike computers and their GPX exports does GPX Video Editor support?',
-        faq_a2: 'Perfectly compatible with standard GPX files exported from the full Garmin bike computer lineup, Strava and 行者 (Xingzhe). No format conversion needed — just drag & drop to import, and speed, altitude, gradient and distance data are parsed automatically.',
-        faq_q3: 'Can GPX tracks from non-Garmin devices auto-align with cycling videos?',
-        faq_a3: 'Currently only GoPro records GPMF metadata inside the video for automatic alignment. Videos recorded by other brands can still be manually aligned inside the app using GPX data exported from a sports watch, bike computer or Strava — the end result is the same complete data overlay.',
-        faq_q4: 'Will the app lag or overheat on Apple Silicon Macs?',
-        faq_a4: 'The software is natively compiled for Apple Silicon and takes full advantage of the M-series GPU for video rendering. Compared with the legacy VIRB Edit, it uses less memory and does not noticeably overheat or crash even when editing long cycling videos for hours on end.',
-        faq_q5: 'Does it work on the latest macOS Ventura / Sonoma?',
-        faq_a5: 'It supports macOS 13.0 and above, and keeps up with system updates. You won\'t run into the launch failures, crashes or permission issues that plague Garmin VIRB Edit on modern macOS.',
-        faq_q6: 'Do I need to install extra plug-ins or codecs to read videos?',
-        faq_a6: 'No. A full video parsing core is built in, so everything works out of the box. No third-party encoder downloads, no permission conflicts, no system security pop-ups.',
-        faq_q7: 'Can I customize the style, size and position of the cycling HUD widgets?',
-        faq_a7: 'Multiple built-in templates are available. Widgets can be freely repositioned, have their opacity adjusted and their font colour changed. Data modules for speed, altitude, gradient, distance, heart rate, cadence, power and more can be toggled on or off individually so you can create a fully custom look.',
-        faq_q8: 'After purchasing once, will 2.x updates cost extra?',
-        faq_a8: 'All iterative updates within the current version are permanently free. New versions published on the App Store can be updated directly — no subscriptions, no hidden paywalls.',
-        faq_q9: 'Can the app handle long ride recordings of an hour or more smoothly?',
-        faq_a9: 'Segmented memory optimizations are in place for long-form sports videos. 1–3 hour cycling footage can be previewed, rendered and exported smoothly, with no frozen loading states.',
-        faq_q10: 'How does GPX Video Editor compare to Final Cut or Premiere Pro for cycling videos?',
-        faq_a10: 'Professional editing software requires manual plug-in installation and complex workflows just to load GPX data. This app is purpose-built for outdoor cycling: import your assets, one-click sync the track, and skip the learning curve — finished clips in minutes.',
-        faq_q11: 'Can GPX Video Editor run on Windows PCs?',
-        faq_a11: 'It is currently macOS-exclusive and deeply optimized for Apple hardware. Cross-platform releases are under evaluation for future updates.',
-        faq_q12: 'Can the exported video be uploaded directly to TikTok, YouTube, Bilibili and Xiaohongshu?',
-        faq_a12: 'Aspect ratios popular on short-video platforms are supported (16:9 landscape, 9:16 portrait crop). Videos export in universal MP4 format — no re-encoding required, just publish.',
-        faq_q13: 'What types of sports data are supported as HUD overlays?',
-        faq_a13: 'Speed, power, altitude, heart rate, cadence, gradient, distance and cumulative elevation — plus a one-click toggle between metric and imperial units for each metric.',
-        faq_q14: 'Do I need a separate GPX import for my GoPro footage?',
-        faq_a14: 'No. If GPS was enabled while recording, the app auto-extracts GPMF metadata from the video itself and parses speed, altitude, gradient and the ride route directly, which are then displayed on the HUD. For richer physiological data (heart rate, cadence, power), you can additionally import a GPX from your sports watch and the app will auto-align the two timelines.',
-        faq_q15: 'How long does rendering an exported video take?',
-        faq_a15: 'On an Apple Silicon Mac, 1080p videos typically render at 2–4× real-time speed, and 4K videos at 1–2× real-time. Exact rendering time depends on video resolution, bitrate, the number of HUD panels and your computer\'s performance.',
-        faq_q16: 'Does the app require an internet connection?',
-        faq_a16: 'Core editing and GPX overlay work entirely offline, no login required. Only the track-map layer needs connectivity to fetch fresh map tiles; cached maps remain viewable offline.',
->>>>>>> 680f5fb08739c1ccadaf93c34f533005570440a5
+        devlog_entry3_date: '2026 · The Real Beginning',
+        devlog_entry3_title: 'The Hairpin Turn That Started Everything',
+        devlog_entry3_content: '<p>I didn\'t start building a cycling telemetry editor because I wanted to write software.</p><p>I started because of a single corner on a mountain road.</p><h4>A Moment That Felt Impossible to Capture</h4><p>It was a normal ride.</p><p>A familiar descent.</p><p>Nothing special—until that one hairpin turn.</p><p>You know the kind:</p><ul><li>You brake hard before the corner</li><li>The road drops away slightly</li><li>You lean in</li><li>And suddenly the world rotates around you</li></ul><p>For a few seconds, everything feels compressed:</p><p>speed, gravity, direction, silence.</p><p>It\'s the kind of moment that makes you think:</p><p><strong>"This is exactly why I ride."</strong></p><h4>Then I Watched the Video</h4><p>Later that day, I checked the footage.</p><p>And something felt wrong.</p><p>The turn was there.</p><p>The road was there.</p><p>The motion was there.</p><p>But the feeling was gone.</p><p>It looked flat.</p><p>Almost boring.</p><p>Like any other corner on any other road.</p><p>That disconnect stayed with me.</p><h4>The Real Problem</h4><p>Cycling videos don\'t fail because of low resolution.</p><p>They fail because they lose context.</p><p>A rider doesn\'t experience a road as:</p><ul><li>numbers</li><li>timestamps</li><li>GPS points</li></ul><p>A rider experiences:</p><ul><li>anticipation before a corner</li><li>tension during the turn</li><li>release on exit</li><li>and awareness of what comes next</li></ul><p>None of that exists in a normal video.</p><h4>I Tried to Fix It</h4><p>At first, I thought the solution was simple:</p><p>Just overlay some data.</p><p>Speed. Elevation. A map.</p><p>But it didn\'t solve the problem.</p><p>Because the real issue wasn\'t missing data.</p><p>It was missing structure.</p><p>The video showed motion, but not geometry.</p><h4>The Idea That Changed Everything</h4><p>Then I had a simple idea:</p><p><strong>What if the viewer could see the road the same way the rider feels it?</strong></p><p>Not as a static map.</p><p>But as a dynamic path that moves with you.</p><p>Almost like a drone is following you through the ride.</p><p>Not behind.</p><p>Not ahead.</p><p>But aligned with the motion itself.</p><p>That idea became my first Track Path HUD.</p><h4>The Hairpin as a Test</h4><p>The hairpin turn became the ultimate test.</p><p>If the system is slightly off:</p><ul><li>the turn feels wrong</li><li>the illusion breaks instantly</li></ul><p>If it\'s perfectly aligned:</p><ul><li>the viewer suddenly understands the ride</li></ul><p>Not intellectually.</p><p>But visually.</p><p>That was the moment I realized:</p><p><strong>This is not about data overlay.</strong></p><p><strong>This is about reconstructing experience.</strong></p><h4>What Started as One Corner</h4><p>That single descent eventually led to:</p><ul><li>a GPS-video synchronization system</li><li>automatic GoPro GPS extraction</li><li>a drone-style Track Path HUD</li><li>elevation and route visualizations</li><li>and a full cycling telemetry editor</li></ul><p>But none of it started as a product idea.</p><p>It started with a feeling I couldn\'t show on screen.</p><h4>The Real Beginning</h4><p>People often ask what inspired this project.</p><p>The honest answer is simple:</p><p>It wasn\'t inspiration.</p><p>It was frustration.</p><p>A single hairpin turn made me realize something:</p><p><strong>The ride I experienced and the video I recorded were describing two completely different worlds.</strong></p><p>And I decided to build the bridge between them.</p>',
         cat_modern_bar: 'Modern Bar',
         cat_classic_dial: 'Classic Dial',
         cat_digital: 'Digital',
