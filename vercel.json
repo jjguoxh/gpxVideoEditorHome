@@ -1,0 +1,67 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "gpx-video-editor-home-git-main-guo-xiaohui-s-projects.vercel.app"
+        }
+      ],
+      "destination": "https://gpx-video-editor-home.vercel.app/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "gpx-video-editor-home-pm4vkutm-guo-xiaohui-s-projects.vercel.app"
+        }
+      ],
+      "destination": "https://gpx-video-editor-home.vercel.app/$1",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "gpx-video-editor-home-git-main-guo-xiaohui-s-projects.vercel.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "gpx-video-editor-home-pm4vkutm-guo-xiaohui-s-projects.vercel.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "<https://gpx-video-editor-home.vercel.app/>; rel=\"canonical\""
+        }
+      ]
+    }
+  ]
+}
