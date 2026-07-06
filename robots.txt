@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gpx-video-editor-home.vercel.app/sitemap.xml
