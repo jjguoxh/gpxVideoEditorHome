@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPX Video Editor - Infuse Your Videos With Pro Data</title>
     <!-- 中文元标签 -->
-    <meta name="description" content="原生macOS App，将Garmin/Strava的GPX轨迹数据与视频融合，叠加速度、海拔、功率、心率HUD，一键生成专业运动视频。">
-    <meta name="keywords" content="GPX视频编辑器, 骑行HUD视频, 运动数据叠加, macOS视频工具, 骑行视频制作">
+    <meta name="description" content="原生macOS App，将Garmin/Strava的GPX/FIT轨迹数据与视频融合，叠加速度、海拔、功率、心率HUD，一键生成专业运动视频。">
+    <meta name="keywords" content="GPX视频编辑器, FIT视频编辑器, 骑行HUD视频, 运动数据叠加, macOS视频工具, 骑行视频制作">
     <!-- English meta tags -->
-    <meta name="description" content="Native macOS app that fuses Garmin/Strava GPX track data with video, overlays speed, altitude, power, and heart rate HUDs, and generates professional sports videos in one click.">
-    <meta name="keywords" content="GPX video editor, cycling HUD video, sports data overlay, macOS video tool, cycling video production, cycling video overlay, bike telemetry overlay, gopro cycling data">
+    <meta name="description" content="Native macOS app that fuses Garmin/Strava GPX/FIT track data with video, overlays speed, altitude, power, and heart rate HUDs, and generates professional sports videos in one click.">
+    <meta name="keywords" content="GPX video editor, FIT video editor, cycling HUD video, sports data overlay, macOS video tool, cycling video production, cycling video overlay, bike telemetry overlay, gopro cycling data">
     <link rel="canonical" href="https://gpx-video-editor-home.vercel.app/">
     <script>
         if (window.location.hostname.includes("github.io")) {
@@ -156,6 +156,12 @@
         .data-item p{font-size:12px;color:var(--text-muted)}
 
         .faq-section{background:var(--bg-secondary)}
+
+        .video-showcase{background:var(--bg-secondary)}
+        .video-grid{display:grid;grid-template-columns:1fr;gap:24px;max-width:680px;margin:0 auto}
+        .video-card{background:var(--bg-card);border-radius:16px;border:1px solid var(--border-color);overflow:hidden;transition:transform .2s,box-shadow .2s}
+        .video-card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+        .reddit-embed-bq{margin:0!important;border:none!important}
         .faq-list{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
         .faq-item{background:var(--bg-card);border-radius:16px;border:1px solid var(--border-color);overflow:hidden;transition:border-color .3s,box-shadow .3s}
         .faq-item:hover{border-color:rgba(14,165,233,0.2);box-shadow:0 4px 20px rgba(0,0,0,0.04)}
@@ -245,6 +251,7 @@
                 GPX Video Editor
             </a>
             <ul class="nav-links">
+                <li><a href="#videos" data-i18n="nav_videos">视频预览</a></li>
                 <li><a href="#workflow" data-i18n="nav_workflow">使用流程</a></li>
                 <li><a href="#features" data-i18n="nav_features">核心功能</a></li>
                 <li><a href="#hud-showcase" data-i18n="nav_hud">HUD 风格</a></li>
@@ -267,7 +274,7 @@
     <div class="container">
         <div class="hero-text">
             <h1 data-i18n-html="hero_h1">为运动视频<br><span class="gradient-text">注入专业数据</span></h1>
-            <p data-i18n="hero_desc">将 GPX 轨迹数据与视频完美融合，用精美的 HUD 叠加层展示速度、功率、海拔、心率等实时数据。支持 GoPro GPS 自动提取，让你的运动视频更具专业质感。</p>
+            <p data-i18n="hero_desc">将 GPX/FIT 轨迹数据与视频完美融合，用精美的 HUD 叠加层展示速度、功率、海拔、心率等实时数据。支持 GoPro GPS 自动提取，让你的运动视频更具专业质感。</p>
             <div class="hero-buttons">
                 <a href="https://apps.apple.com/app/gpxvideoeditor/id6762338535" class="btn-primary" data-i18n-html="hero_btn_download">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -314,6 +321,34 @@
     </div>
 </section>
 
+<section class="video-showcase" id="videos">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-badge badge-cyan" data-i18n="video_badge">视频预览</span>
+            <h2 data-i18n="video_title">看看效果如何</h2>
+            <p data-i18n="video_subtitle">真实用户用 GPX Video Editor 制作的运动视频</p>
+        </div>
+        <div class="video-grid fade-in">
+            <div class="video-card">
+                <blockquote class="reddit-embed-bq" data-embed-height="486" style="border-radius:16px;overflow:hidden">
+                    <a href="https://www.reddit.com/r/bicycling/comments/1uhms3u/leisurely_cycling_along_the_coastline/">Leisurely cycling along the coastline</a><br>by <a href="https://www.reddit.com/r/bicycling/">r/bicycling</a>
+                </blockquote>
+            </div>
+            <div class="video-card">
+                <blockquote class="reddit-embed-bq" data-embed-height="486" style="border-radius:16px;overflow:hidden">
+                    <a href="https://www.reddit.com/r/bicycling/comments/1ufabh5/regular_downhill_cycling/">Regular downhill cycling</a><br>by <a href="https://www.reddit.com/r/bicycling/">r/bicycling</a>
+                </blockquote>
+            </div>
+            <div class="video-card">
+                <blockquote class="reddit-embed-bq" data-embed-height="486" style="border-radius:16px;overflow:hidden">
+                    <a href="https://www.reddit.com/r/bicycling/comments/1u852bb/i_wanted_to_show_people_why_i_wake_up_at_5_am_to/">I wanted to show people why I wake up at 5 am to cycle</a><br>by <a href="https://www.reddit.com/r/bicycling/">r/bicycling</a>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+<script async src="https://embed.reddit.com/widgets.js" charset="UTF-8"></script>
+
 <section class="workflow" id="workflow">
     <div class="container">
         <div class="section-header fade-in">
@@ -331,8 +366,8 @@
             <div class="workflow-step step-2 fade-in">
                 <div class="step-number">2</div>
                 <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                <h3 data-i18n="step2_title">导入 GPX</h3>
-                <p data-i18n="step2_desc">导入 GPX 轨迹文件，自动解析速度、海拔、心率、踏频、功率等运动数据。支持从 GoPro 视频中自动提取 GPS 数据并同步，无需手动导入。</p>
+                <h3 data-i18n="step2_title">导入 GPX/FIT</h3>
+                <p data-i18n="step2_desc">导入 GPX 或 FIT 轨迹文件，自动解析速度、海拔、心率、踏频、功率等运动数据。支持从 GoPro 视频中自动提取 GPS 数据并同步，无需手动导入。</p>
             </div>
             <div class="workflow-step step-3 fade-in">
                 <div class="step-number">3</div>
@@ -381,17 +416,17 @@
             <div class="feature-card wide fade-in">
                 <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
                 <h3 data-i18n="feat5_title">精确时间对齐</h3>
-                <p data-i18n="feat5_desc">通过可视化时间轴，精确对齐 GPX 时间戳与视频时间。支持播放预览确认同步效果，可随时撤销对齐重新调整，确保数据与画面完美匹配。</p>
+                <p data-i18n="feat5_desc">通过可视化时间轴，精确对齐 GPX/FIT 时间戳与视频时间。支持在卫星地图上点击轨迹任意位置快速定位，利用道路弯道等地理标志进行视觉对齐。支持播放预览确认同步效果，可随时撤销对齐重新调整，确保数据与画面完美匹配。</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
                 <h3 data-i18n="feat6_title">GoPro GPS 自动提取</h3>
-                <p data-i18n="feat6_desc">导入 GoPro 视频时自动检测并提取内嵌 GPS 数据，无需单独导入 GPX 文件。自动计算时间偏移并同步，也支持将 GoPro GPS 作为轨迹地图数据源。</p>
+                <p data-i18n="feat6_desc">导入 GoPro 视频时自动检测并提取内嵌 GPS 数据，无需单独导入 GPX/FIT 文件。自动计算时间偏移并同步，也支持将 GoPro GPS 作为轨迹地图数据源。</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
                 <h3 data-i18n="feat7_title">预设主题一键切换</h3>
-                <p data-i18n="feat7_desc">内置经典竞速、户外探险、赛博未来、柔光梦幻、复古怀旧等多套预设主题，一键切换所有 HUD 面板风格，快速打造统一视觉风格。</p>
+                <p data-i18n="feat7_desc">内置经典竞速、全息投影、海岸骑行等多套预设主题，一键切换所有 HUD 面板风格，快速打造统一视觉风格。</p>
             </div>
         </div>
     </div>
@@ -408,8 +443,8 @@
             <div class="dm-card fade-in">
                 <div class="dm-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/><circle cx="12" cy="12" r="3"/></svg></div>
                 <div class="dm-card-step">01</div>
-                <h3 data-i18n="dm3_title">手动 GPX 对齐</h3>
-                <p data-i18n="dm3_desc">对于不含 GPS 信息的视频（如手机、运动相机等），可导入 GPX 文件并通过可视化时间轴手动对齐。支持播放预览确认同步效果，随时撤销重调，同样能实现完整的地理与生理数据叠加。</p>
+                <h3 data-i18n="dm3_title">手动 GPX/FIT 对齐</h3>
+                <p data-i18n="dm3_desc">对于不含 GPS 信息的视频（如手机、运动相机等），可导入 GPX 或 FIT 文件并通过可视化时间轴手动对齐。支持在卫星地图上点击轨迹任意位置快速定位，利用道路弯道等地理标志进行视觉对齐。支持播放预览确认同步效果，随时撤销重调，同样能实现完整的地理与生理数据叠加。</p>
                 <div class="dm-card-tags">
                     <span class="dm-tag" data-i18n="dm3_tag1">适用所有视频</span>
                     <span class="dm-tag" data-i18n="dm3_tag2">手动精确对齐</span>
@@ -428,8 +463,8 @@
             <div class="dm-card fade-in">
                 <div class="dm-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/><path d="M8 8l4 4 4-4"/></svg></div>
                 <div class="dm-card-step">03</div>
-                <h3 data-i18n="dm2_title">GPX 增强 + 自动对齐</h3>
-                <p data-i18n="dm2_desc">在 GoPro GPS 基础上导入 GPX 文件，获得心率、踏频、功率等更丰富的生理与运动数据。系统自动计算 GoPro GPS 与 GPX 的时间偏移并完成对齐，无需手动调整时间。</p>
+                <h3 data-i18n="dm2_title">GPX/FIT 增强 + 自动对齐</h3>
+                <p data-i18n="dm2_desc">在 GoPro GPS 基础上导入 GPX 或 FIT 文件，获得心率、踏频、功率等更丰富的生理与运动数据。系统自动计算 GoPro GPS 与 GPX/FIT 的时间偏移并完成对齐，无需手动调整时间。</p>
                 <div class="dm-card-tags">
                     <span class="dm-tag" data-i18n="dm2_tag1">自动时间对齐</span>
                     <span class="dm-tag" data-i18n="dm2_tag2">心率+踏频+功率</span>
@@ -444,7 +479,7 @@
         <div class="section-header fade-in">
             <span class="section-badge badge-gold" data-i18n="hud_badge">HUD 风格</span>
             <h2 data-i18n="hud_title">精美 HUD 风格库</h2>
-            <p data-i18n="hud_subtitle">8 大类别 40+ 种风格任你选择</p>
+            <p data-i18n="hud_subtitle">7 大类别 50+ 种风格任你选择</p>
         </div>
         <div class="hud-categories fade-in" id="hudCategories"></div>
         <div class="hud-gallery" id="hudGallery"></div>
@@ -648,11 +683,12 @@ const i18n = {
         nav_features: '核心功能',
         nav_hud: 'HUD 风格',
         nav_export: '导出',
+        nav_videos: '视频预览',
         nav_faq: '常见问题',
         nav_download: '下载 App',
         nav_devlog: '开发日志',
         hero_h1: '为运动视频<br><span class="gradient-text">注入专业数据</span>',
-        hero_desc: '将 GPX 轨迹数据与视频完美融合，用精美的 HUD 叠加层展示速度、功率、海拔、心率等实时数据。支持 GoPro GPS 自动提取，让你的运动视频更具专业质感。',
+        hero_desc: '将 GPX/FIT 轨迹数据与视频完美融合，用精美的 HUD 叠加层展示速度、功率、海拔、心率等实时数据。支持 GoPro GPS 自动提取，让你的运动视频更具专业质感。',
         hero_btn_download: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> 下载 macOS 版',
         hero_btn_learn: '了解更多 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>',
         mockup_hud_config: 'HUD 配置',
@@ -667,8 +703,8 @@ const i18n = {
         workflow_subtitle: '从导入到导出，简单直观的操作流程',
         step1_title: '导入视频',
         step1_desc: '支持主流视频格式导入，拖拽即可开始。自动识别视频时长与帧率，为后续数据同步做好准备。',
-        step2_title: '导入 GPX',
-        step2_desc: '导入 GPX 轨迹文件，自动解析速度、海拔、心率、踏频、功率等运动数据。支持从 GoPro 视频中自动提取 GPS 数据并同步，无需手动导入。',
+        step2_title: '导入 GPX/FIT',
+        step2_desc: '导入 GPX 或 FIT 轨迹文件，自动解析速度、海拔、心率、踏频、功率等运动数据。支持从 GoPro 视频中自动提取 GPS 数据并同步，无需手动导入。',
         step3_title: '对齐数据',
         step3_desc: '通过时间轴精确对齐 GPX 数据与视频画面，支持手动微调。确保 HUD 数据与视频内容完美同步。',
         step4_title: '定制 & 导出',
@@ -685,11 +721,11 @@ const i18n = {
         feat4_title: '轨迹地图叠加',
         feat4_desc: '在视频上叠加 GPS 轨迹地图，支持 Apple 地图，可切换地图区域。当前位置以箭头指示，方向沿路径切线，转弯时平滑旋转。',
         feat5_title: '精确时间对齐',
-        feat5_desc: '通过可视化时间轴，精确对齐 GPX 时间戳与视频时间。支持播放预览确认同步效果，可随时撤销对齐重新调整，确保数据与画面完美匹配。',
+        feat5_desc: '通过可视化时间轴，精确对齐 GPX/FIT 时间戳与视频时间。支持在卫星地图上点击轨迹任意位置快速定位，利用道路弯道等地理标志进行视觉对齐。支持播放预览确认同步效果，可随时撤销对齐重新调整，确保数据与画面完美匹配。',
         feat6_title: 'GoPro GPS 自动提取',
-        feat6_desc: '导入 GoPro 视频时自动检测并提取内嵌 GPS 数据，无需单独导入 GPX 文件。自动计算时间偏移并同步，也支持将 GoPro GPS 作为轨迹地图数据源。',
+        feat6_desc: '导入 GoPro 视频时自动检测并提取内嵌 GPS 数据，无需单独导入 GPX/FIT 文件。自动计算时间偏移并同步，也支持将 GoPro GPS 作为轨迹地图数据源。',
         feat7_title: '预设主题一键切换',
-        feat7_desc: '内置经典竞速、户外探险、赛博未来、柔光梦幻、复古怀旧等多套预设主题，一键切换所有 HUD 面板风格，快速打造统一视觉风格。',
+        feat7_desc: '内置经典竞速、全息投影、海岸骑行等多套预设主题，一键切换所有 HUD 面板风格，快速打造统一视觉风格。',
         dm_badge: '数据叠加',
         dm_coming_soon: '即将上线',
         dm_title: '三种数据叠加方式',
@@ -698,12 +734,12 @@ const i18n = {
         dm1_desc: '如果你使用 GoPro 录制并开启了 GPS，导入视频后自动检测并提取内嵌的 GPS 数据，无需任何额外操作。可直接展示运动路径、速度、海拔、坡度等信息，一键生成带数据叠加的视频。',
         dm1_tag1: '零配置',
         dm1_tag2: '路径+速度+海拔+坡度',
-        dm2_title: 'GPX 增强 + 自动对齐',
-        dm2_desc: '在 GoPro GPS 基础上导入 GPX 文件，获得心率、踏频、功率等更丰富的生理与运动数据。系统自动计算 GoPro GPS 与 GPX 的时间偏移并完成对齐，无需手动调整时间。',
+        dm2_title: 'GPX/FIT 增强 + 自动对齐',
+        dm2_desc: '在 GoPro GPS 基础上导入 GPX 或 FIT 文件，获得心率、踏频、功率等更丰富的生理与运动数据。系统自动计算 GoPro GPS 与 GPX/FIT 的时间偏移并完成对齐，无需手动调整时间。',
         dm2_tag1: '自动时间对齐',
         dm2_tag2: '心率+踏频+功率',
-        dm3_title: '手动 GPX 对齐',
-        dm3_desc: '对于不含 GPS 信息的视频（如手机、运动相机等），可导入 GPX 文件并通过可视化时间轴手动对齐。支持播放预览确认同步效果，随时撤销重调，同样能实现完整的地理与生理数据叠加。',
+        dm3_title: '手动 GPX/FIT 对齐',
+        dm3_desc: '对于不含 GPS 信息的视频（如手机、运动相机等），可导入 GPX 或 FIT 文件并通过可视化时间轴手动对齐。支持在卫星地图上点击轨迹任意位置快速定位，利用道路弯道等地理标志进行视觉对齐。支持播放预览确认同步效果，随时撤销重调，同样能实现完整的地理与生理数据叠加。',
         dm3_tag1: '适用所有视频',
         dm3_tag2: '手动精确对齐',
         hud_badge: 'HUD 风格',
@@ -742,6 +778,10 @@ const i18n = {
         footer_privacy: '隐私政策',
         footer_terms: '使用条款',
         footer_contact: '联系我们',
+        video_badge: '视频预览',
+        video_title: '看看效果如何',
+        video_subtitle: '真实用户用 GPX Video Editor 制作的运动视频',
+
         faq_badge: '常见问题',
         faq_title: '你可能想知道的',
         faq_subtitle: '关于 GPX Video Editor 的常见疑问与解答',
@@ -776,11 +816,12 @@ const i18n = {
         nav_features: 'Features',
         nav_hud: 'HUD Styles',
         nav_export: 'Export',
+        nav_videos: 'Videos',
         nav_faq: 'FAQ',
         nav_download: 'Download',
         nav_devlog: 'Dev Log',
         hero_h1: 'Infuse Your Videos<br><span class="gradient-text">With Pro Data</span>',
-        hero_desc: 'Seamlessly blend GPX track data with your videos. Overlay stunning HUD layers showing speed, power, altitude, heart rate and more. GoPro GPS auto-extract supported — give your sports videos a professional edge.',
+        hero_desc: 'Seamlessly blend GPX/FIT track data with your videos. Overlay stunning HUD layers showing speed, power, altitude, heart rate and more. GoPro GPS auto-extract supported — give your sports videos a professional edge.',
         hero_btn_download: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download for macOS',
         hero_btn_learn: 'Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>',
         mockup_hud_config: 'HUD Config',
@@ -795,8 +836,8 @@ const i18n = {
         workflow_subtitle: 'From import to export — a simple, intuitive process',
         step1_title: 'Import Video',
         step1_desc: 'Support for all major video formats. Drag and drop to get started. Auto-detects duration and frame rate for seamless data sync.',
-        step2_title: 'Import GPX',
-        step2_desc: 'Import GPX track files to auto-parse speed, altitude, heart rate, cadence, power and more. GoPro GPS data is auto-extracted and synced — no manual import needed.',
+        step2_title: 'Import GPX/FIT',
+        step2_desc: 'Import GPX or FIT track files to auto-parse speed, altitude, heart rate, cadence, power and more. GoPro GPS data is auto-extracted and synced — no manual import needed.',
         step3_title: 'Align Data',
         step3_desc: 'Precisely align GPX data with video frames using the visual timeline. Fine-tune manually to ensure perfect synchronization.',
         step4_title: 'Customize & Export',
@@ -813,11 +854,11 @@ const i18n = {
         feat4_title: 'Track Map Overlay',
         feat4_desc: 'Overlay GPS track maps on your video. Supports Apple Maps with switchable regions. Current position shown as an arrow pointing along the path tangent, rotating smoothly through turns.',
         feat5_title: 'Precise Time Alignment',
-        feat5_desc: 'Use the visual timeline to precisely align GPX timestamps with video time. Preview playback to confirm sync, undo and re-adjust anytime for a perfect match.',
+        feat5_desc: 'Use the visual timeline to precisely align GPX/FIT timestamps with video time. Click anywhere on the satellite map to jump to that point on the track — use road bends and geographic landmarks as visual alignment references. Preview playback to confirm sync, undo and re-adjust anytime for a perfect match.',
         feat6_title: 'GoPro GPS Auto-Extract',
-        feat6_desc: 'Automatically detect and extract embedded GPS data when importing GoPro videos — no separate GPX file needed. Auto-calculates time offset and syncs. GoPro GPS can also be used as a track map data source.',
+        feat6_desc: 'Automatically detect and extract embedded GPS data when importing GoPro videos — no separate GPX/FIT file needed. Auto-calculates time offset and syncs. GoPro GPS can also be used as a track map data source.',
         feat7_title: 'Preset Themes',
-        feat7_desc: 'Built-in preset themes — Classic Racing, Outdoor Adventure, Cyber Future, Soft Dreamy, Retro Vintage and more. Switch all HUD panel styles with one click for a unified visual look.',
+        feat7_desc: 'Built-in preset themes — Classic Racing, Hologram, Coast Ride and more. Switch all HUD panel styles with one click for a unified visual look.',
         dm_badge: 'Data Overlay',
         dm_coming_soon: 'Coming Soon',
         dm_title: 'Three Ways to Overlay Data',
@@ -826,12 +867,12 @@ const i18n = {
         dm1_desc: 'If you recorded with a GoPro and GPS was enabled, the embedded GPS data is automatically detected and extracted on import — no extra steps needed. Instantly display route, speed, altitude, gradient and more, then export with data overlay in one click.',
         dm1_tag1: 'Zero Config',
         dm1_tag2: 'Route+Speed+Alt+Gradient',
-        dm2_title: 'GPX Enhanced + Auto-Align',
-        dm2_desc: 'Import a GPX file on top of GoPro GPS to unlock richer physiological and performance data like heart rate, cadence and power. The system automatically calculates the time offset between GoPro GPS and GPX and aligns them — no manual adjustment needed.',
+        dm2_title: 'GPX/FIT Enhanced + Auto-Align',
+        dm2_desc: 'Import a GPX or FIT file on top of GoPro GPS to unlock richer physiological and performance data like heart rate, cadence and power. The system automatically calculates the time offset between GoPro GPS and GPX/FIT and aligns them — no manual adjustment needed.',
         dm2_tag1: 'Auto Time Align',
         dm2_tag2: 'HR+Cadence+Power',
-        dm3_title: 'Manual GPX Alignment',
-        dm3_desc: 'For videos without GPS data (phones, action cameras, etc.), import a GPX file and manually align it using the visual timeline. Preview playback to confirm sync, undo and re-adjust anytime — still get full geographic and physiological data overlay.',
+        dm3_title: 'Manual GPX/FIT Alignment',
+        dm3_desc: 'For videos without GPS data (phones, action cameras, etc.), import a GPX or FIT file and manually align it using the visual timeline. Click anywhere on the satellite map to jump to that point on the track — use road bends and geographic landmarks as visual alignment references. Preview playback to confirm sync, undo and re-adjust anytime — still get full geographic and physiological data overlay.',
         dm3_tag1: 'All Videos',
         dm3_tag2: 'Manual Precision Align',
         hud_badge: 'HUD Styles',
@@ -870,6 +911,10 @@ const i18n = {
         footer_privacy: 'Privacy Policy',
         footer_terms: 'Terms of Use',
         footer_contact: 'Contact Us',
+        video_badge: 'Video Preview',
+        video_title: 'See It in Action',
+        video_subtitle: 'Real sports videos made with GPX Video Editor',
+
         faq_badge: 'FAQ',
         faq_title: 'You Might Be Wondering',
         faq_subtitle: 'Common questions and answers about GPX Video Editor',
