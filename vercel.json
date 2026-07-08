@@ -24,7 +24,6 @@
     }
   ],
   "headers": [
-    // 新增：sitemap.xml 专用配置（放在最上方，优先匹配）
     {
       "source": "/sitemap.xml",
       "headers": [
@@ -34,7 +33,6 @@
         }
       ]
     },
-    // 下面是你原有的所有header规则，完全保留不动
     {
       "source": "/(.*)",
       "has": [
