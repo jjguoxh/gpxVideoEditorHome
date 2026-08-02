@@ -418,7 +418,7 @@
             <div class="feature-card fade-in">
                 <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div>
                 <h3 data-i18n="feat4_title">轨迹地图叠加</h3>
-                <p data-i18n="feat4_desc">在视频上叠加 GPS 轨迹地图，支持高德地图和 Apple 地图，可切换地图区域。当前位置以箭头指示，方向沿路径切线，转弯时平滑旋转。</p>
+                <p data-i18n="feat4_desc">矢量轨迹地图：基于 Metal + GPU Shader 渲染的俯视轨迹 HUD，转弯时旋转丝滑流畅。卫星地图 HUD：真实卫星航拍地图叠加在视频上，直观展示完整骑行路线与当前位置。支持高德地图和 Apple 地图，可切换地图区域。</p>
             </div>
             <div class="feature-card wide fade-in">
                 <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -434,6 +434,16 @@
                 <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
                 <h3 data-i18n="feat7_title">预设主题一键切换</h3>
                 <p data-i18n="feat7_desc">内置经典竞速、全息投影、海岸骑行等多套预设主题，一键切换所有 HUD 面板风格，快速打造统一视觉风格。</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polygon points="10 8 10 12 14 10"/></svg></div>
+                <h3 data-i18n="feat8_title">电影叙事卡片</h3>
+                <p data-i18n="feat8_desc">自动检测发夹弯、速度爆发、陡坡爬升、心率峰值等运动高光时刻，生成电影级叙事卡片叠加在视频上。可调节密度与转场效果，为运动视频注入故事节奏。</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                <h3 data-i18n="feat9_title">Metal GPU 加速导出</h3>
+                <p data-i18n="feat9_desc">视频导出全流程优化，HUD 面板智能缓存避免重复渲染，Metal 渲染管线加速轨迹地图绘制，显著缩短导出等待时间。</p>
             </div>
         </div>
     </div>
@@ -726,13 +736,17 @@ const i18n = {
         feat3_title: '自定义强调色',
         feat3_desc: '每种 HUD 风格都支持自定义强调色，一键切换颜色主题，让 HUD 与视频画面完美融合。',
         feat4_title: '轨迹地图叠加',
-        feat4_desc: '在视频上叠加 GPS 轨迹地图，支持 Apple 地图，可切换地图区域。当前位置以箭头指示，方向沿路径切线，转弯时平滑旋转。',
+        feat4_desc: '矢量轨迹地图：基于 Metal + GPU Shader 渲染的俯视轨迹 HUD，转弯时旋转丝滑流畅。卫星地图 HUD：真实卫星航拍地图叠加在视频上，直观展示完整骑行路线与当前位置。支持高德地图和 Apple 地图，可切换地图区域。',
         feat5_title: '精确时间对齐',
         feat5_desc: '通过可视化时间轴，精确对齐 GPX/FIT 时间戳与视频时间。支持在卫星地图上点击轨迹任意位置快速定位，利用道路弯道等地理标志进行视觉对齐。支持播放预览确认同步效果，可随时撤销对齐重新调整，确保数据与画面完美匹配。',
         feat6_title: 'GoPro GPS 自动提取',
         feat6_desc: '导入 GoPro 视频时自动检测并提取内嵌 GPS 数据，无需单独导入 GPX/FIT 文件。自动计算时间偏移并同步，也支持将 GoPro GPS 作为轨迹地图数据源。',
         feat7_title: '预设主题一键切换',
         feat7_desc: '内置经典竞速、全息投影、海岸骑行等多套预设主题，一键切换所有 HUD 面板风格，快速打造统一视觉风格。',
+        feat8_title: '电影叙事卡片',
+        feat8_desc: '自动检测发夹弯、速度爆发、陡坡爬升、心率峰值等运动高光时刻，生成电影级叙事卡片叠加在视频上。可调节密度与转场效果，为运动视频注入故事节奏。',
+        feat9_title: 'Metal GPU 加速导出',
+        feat9_desc: '视频导出全流程优化，HUD 面板智能缓存避免重复渲染，Metal 渲染管线加速轨迹地图绘制，显著缩短导出等待时间。',
         dm_badge: '数据叠加',
         dm_coming_soon: '即将上线',
         dm_title: '三种数据叠加方式',
@@ -859,13 +873,17 @@ const i18n = {
         feat3_title: 'Custom Accent Colors',
         feat3_desc: 'Every HUD style supports custom accent colors. Switch color themes with one click to blend HUD seamlessly with your footage.',
         feat4_title: 'Track Map Overlay',
-        feat4_desc: 'Overlay GPS track maps on your video. Supports Apple Maps with switchable regions. Current position shown as an arrow pointing along the path tangent, rotating smoothly through turns.',
+        feat4_desc: 'Vector Track Map: A top-down track HUD powered by Metal + GPU Shader rendering, with buttery-smooth rotation through turns. Satellite Map HUD: Overlay real satellite/aerial imagery on your video to showcase the full route and current position. Supports Gaode Maps and Apple Maps with switchable regions.',
         feat5_title: 'Precise Time Alignment',
         feat5_desc: 'Use the visual timeline to precisely align GPX/FIT timestamps with video time. Click anywhere on the satellite map to jump to that point on the track — use road bends and geographic landmarks as visual alignment references. Preview playback to confirm sync, undo and re-adjust anytime for a perfect match.',
         feat6_title: 'GoPro GPS Auto-Extract',
         feat6_desc: 'Automatically detect and extract embedded GPS data when importing GoPro videos — no separate GPX/FIT file needed. Auto-calculates time offset and syncs. GoPro GPS can also be used as a track map data source.',
         feat7_title: 'Preset Themes',
         feat7_desc: 'Built-in preset themes — Classic Racing, Hologram, Coast Ride and more. Switch all HUD panel styles with one click for a unified visual look.',
+        feat8_title: 'Cinematic Story Cards',
+        feat8_desc: 'Auto-detect sport highlights — hairpin turns, speed bursts, hard climbs, heart rate peaks — and generate cinematic story cards overlaid on your video. Adjust density and transition effects to give your sports video a storytelling rhythm.',
+        feat9_title: 'Metal GPU-Accelerated Export',
+        feat9_desc: 'Fully optimized export pipeline — intelligent HUD panel caching avoids redundant rendering, Metal rendering pipeline accelerates track map drawing, significantly reducing export wait times.',
         dm_badge: 'Data Overlay',
         dm_coming_soon: 'Coming Soon',
         dm_title: 'Three Ways to Overlay Data',
