@@ -44,7 +44,7 @@
         .lang-toggle button:hover:not(.active){color:var(--text-primary)}
         .nav-cta{background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));color:#fff;padding:8px 20px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;transition:transform .2s,box-shadow .2s}
         .nav-cta:hover{transform:translateY(-1px);box-shadow:var(--glow-cyan)}
-        @media(max-width:1180px){.nav-links{gap:20px}.nav-links a{font-size:13px}}
+        @media(max-width:1180px){.nav-links{gap:20px}.nav-links a{font-size:13px}.new-grid{grid-template-columns:repeat(2,1fr)}}
 
         .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:64px}
         .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(14,165,233,0.08) 0%,transparent 50%),radial-gradient(ellipse at 70% 50%,rgba(139,92,246,0.08) 0%,transparent 50%);animation:heroGlow 8s ease-in-out infinite alternate}
@@ -157,7 +157,7 @@
 
         /* What's New */
         .whats-new{background:var(--bg-primary)}
-        .new-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+        .new-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
         .new-card{background:var(--bg-card);border-radius:20px;border:1px solid var(--border-color);overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
         .new-card:hover{transform:translateY(-4px);border-color:rgba(14,165,233,0.25);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
         .new-card-media{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,#0f172a,#1e293b);overflow:hidden}
@@ -393,25 +393,10 @@
             </div>
             <div class="new-card fade-in">
                 <div class="new-card-media">
-                    <img src="images/features/pearl-track-hud.png" alt="Pearl marker and comet trail" onload="this.style.display='block';this.nextElementSibling.style.display='none'" onerror="this.remove()">
-                    <div class="shot-hint">
-                        <span class="shot-tag" data-i18n="shot_tag">截图待补</span>
-                        <p data-i18n="new3_hint">轨迹 HUD 选择「Classic」，展开珍珠颜色、大小、呼吸与彗尾设置，截取设置面板和预览画面。</p>
-                        <code>images/features/pearl-track-hud.png</code>
-                    </div>
-                </div>
-                <div class="new-card-body">
-                    <span class="new-tag">NEW</span>
-                    <h3 data-i18n="new3_title">珍珠标记与彗尾</h3>
-                    <p data-i18n="new3_desc">经典轨迹风格新增发光珍珠标记：5 种颜色、0.5×–2.0× 大小、呼吸动画可独立控制；还可开启彗尾拖影，并选择 40 / 100 / 160 m 尾长，让轨迹更有速度感。</p>
-                </div>
-            </div>
-            <div class="new-card fade-in">
-                <div class="new-card-media">
                     <img src="images/features/story-mode-settings.png" alt="Story Mode 2.0 settings" onload="this.style.display='block';this.nextElementSibling.style.display='none'" onerror="this.remove()">
                     <div class="shot-hint">
                         <span class="shot-tag" data-i18n="shot_tag">截图待补</span>
-                        <p data-i18n="new4_hint">打开 Story Mode 设置页，截取「事件选择」列表（含各类别开关和阈值滑杆）与风格选择区域。</p>
+                        <p data-i18n="new4_hint">打开 Story Mode 设置页，截取「事件选择」列表（含各类别开关和阈值滑杆）与密度选择区域。</p>
                         <code>images/features/story-mode-settings.png</code>
                     </div>
                 </div>
@@ -428,7 +413,6 @@
             <div class="new-stat"><strong>2</strong><span data-i18n="new_stats_cameras">轨迹相机模式</span></div>
             <div class="new-stat"><strong>3</strong><span data-i18n="new_stats_langs">界面语言</span></div>
         </div>
-        <p class="shot-note" data-i18n="new_shot_note">标注「截图待补」的位置已预留图片路径，按提示截图并覆盖对应文件后会自动显示。</p>
     </div>
 </section>
 
@@ -955,9 +939,6 @@ const i18n = {
         new2_title: '透明 HUD 导出',
         new2_desc: '新增透明 HUD 导出模式：仅渲染 HUD 与故事卡片图层，输出带 Alpha 通道的 ProRes 4444 .mov，可直接导入 Final Cut Pro、DaVinci Resolve 等软件进行二次合成。',
         new2_hint: '打开导出对话框，选择「透明 HUD」模式，截取包含模式选项与 ProRes 4444 说明的面板。',
-        new3_title: '珍珠标记与彗尾',
-        new3_desc: '经典轨迹风格新增发光珍珠标记：5 种颜色、0.5×–2.0× 大小、呼吸动画可独立控制；还可开启彗尾拖影，并选择 40 / 100 / 160 m 尾长，让轨迹更有速度感。',
-        new3_hint: '轨迹 HUD 选择「Classic」，展开珍珠颜色、大小、呼吸与彗尾设置，截取设置面板和预览画面。',
         new4_title: '故事模式 2.0',
         new4_desc: '可按发夹弯、急转弯、最高速度、最大坡度、最大心率、最大功率与故事序列逐项开关并设置阈值；提供极简 / 标准 / 动态三档密度，精准控制高光时刻数量。',
         new4_hint: '打开 Story Mode 设置页，截取「事件选择」列表（含各类别开关和阈值滑杆）与密度选择区域。',
@@ -965,7 +946,6 @@ const i18n = {
         new_stats_categories: 'HUD 类别',
         new_stats_cameras: '轨迹相机模式',
         new_stats_langs: '界面语言',
-        new_shot_note: '标注「截图待补」的位置已预留图片路径，按提示截图并覆盖对应文件后会自动显示。',
         shot_tag: '截图待补',
 
         faq_badge: '常见问题',
@@ -1120,9 +1100,6 @@ const i18n = {
         new2_title: 'Transparent HUD Export',
         new2_desc: 'A new Transparent HUD export mode renders only HUD and story-card layers as a ProRes 4444 .mov with alpha — ready to import into Final Cut Pro, DaVinci Resolve or any compositing workflow.',
         new2_hint: 'Open the export dialog, choose Transparent HUD, and capture the panel showing the mode option and the ProRes 4444 hint.',
-        new3_title: 'Pearl Marker & Comet Trail',
-        new3_desc: 'The Classic track style adds a glowing pearl marker with 5 colors, 0.5×–2.0× size and an independent breathing toggle. You can also enable a comet trail and pick 40 / 100 / 160 m tail length for a stronger sense of speed.',
-        new3_hint: 'Select the Classic track style, expand the pearl color, size, breathing and comet controls, then capture the settings panel together with the preview.',
         new4_title: 'Story Mode 2.0',
         new4_desc: 'Toggle hairpin turns, sharp turns, max speed, max grade, max heart rate, max power and story sequence independently, each with its own threshold. Choose Minimal / Standard / Dynamic density to control how many highlights appear.',
         new4_hint: 'Open the Story Mode settings page and capture the Event Selection list (switches and threshold sliders) together with the density selector.',
@@ -1130,7 +1107,6 @@ const i18n = {
         new_stats_categories: 'HUD Categories',
         new_stats_cameras: 'Track Camera Modes',
         new_stats_langs: 'UI Languages',
-        new_shot_note: 'Each “Screenshot pending” tile already has a reserved image path. Capture the shot and overwrite the file — it will appear automatically.',
         shot_tag: 'Screenshot pending',
 
         faq_badge: 'FAQ',
