@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPX Video Editor - Infuse Your Videos With Pro Data</title>
     <!-- English meta tags -->
-    <meta name="description" content="Native macOS app that fuses Garmin/Strava GPX/FIT track data with video, overlays speed, altitude, power, and heart rate HUDs, and generates professional sports videos in one click.">
-    <meta name="keywords" content="GPX video editor, FIT video editor, cycling HUD video, sports data overlay, macOS video tool, cycling video production, cycling video overlay, bike telemetry overlay, gopro cycling data">
+    <meta name="description" content="Native macOS app that fuses Garmin/Strava GPX/FIT track data with video, overlays speed, altitude, power, and heart rate HUDs, with a true 3D track HUD, transparent ProRes 4444 HUD export, and one-click pro sports videos.">
+    <meta name="keywords" content="GPX video editor, FIT video editor, cycling HUD video, sports data overlay, macOS video tool, cycling video production, cycling video overlay, bike telemetry overlay, gopro cycling data, 3D track HUD, transparent HUD export, ProRes 4444">
     <link rel="canonical" href="https://gpx-video-editor-home.vercel.app/">
     <script>
         if (window.location.hostname.includes("github.io")) {
@@ -44,6 +44,7 @@
         .lang-toggle button:hover:not(.active){color:var(--text-primary)}
         .nav-cta{background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));color:#fff;padding:8px 20px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;transition:transform .2s,box-shadow .2s}
         .nav-cta:hover{transform:translateY(-1px);box-shadow:var(--glow-cyan)}
+        @media(max-width:1180px){.nav-links{gap:20px}.nav-links a{font-size:13px}}
 
         .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:64px}
         .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(14,165,233,0.08) 0%,transparent 50%),radial-gradient(ellipse at 70% 50%,rgba(139,92,246,0.08) 0%,transparent 50%);animation:heroGlow 8s ease-in-out infinite alternate}
@@ -154,6 +155,35 @@
 
         .faq-section{background:var(--bg-secondary)}
 
+        /* What's New */
+        .whats-new{background:var(--bg-primary)}
+        .new-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+        .new-card{background:var(--bg-card);border-radius:20px;border:1px solid var(--border-color);overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+        .new-card:hover{transform:translateY(-4px);border-color:rgba(14,165,233,0.25);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+        .new-card-media{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,#0f172a,#1e293b);overflow:hidden}
+        .new-card-media img{width:100%;height:100%;object-fit:cover;display:none}
+        .shot-hint{position:absolute;inset:12px;border:2px dashed rgba(148,163,184,0.35);border-radius:12px;background:rgba(15,23,42,0.55);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:20px;color:#cbd5e1}
+        .shot-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,0.15);color:#fbbf24;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.3px}
+        .shot-hint p{font-size:12.5px;line-height:1.7;color:#cbd5e1;max-width:460px}
+        .shot-hint code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;background:rgba(14,165,233,0.15);color:#7dd3fc;padding:3px 8px;border-radius:6px;word-break:break-all;max-width:100%}
+        .new-tag{display:inline-block;margin-bottom:12px;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:800;color:var(--accent-cyan);background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.2);letter-spacing:.5px}
+        .new-card-body{padding:26px 28px}
+        .new-card-body h3{font-size:21px;font-weight:800;margin-bottom:10px}
+        .new-card-body p{font-size:14px;color:var(--text-secondary);line-height:1.8}
+        .new-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+        .new-stat{background:var(--bg-card);border:1px solid var(--border-color);border-radius:14px;padding:20px;text-align:center}
+        .new-stat strong{display:block;font-size:32px;font-weight:900;line-height:1.1;background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .new-stat span{display:block;margin-top:6px;font-size:13px;color:var(--text-secondary)}
+        .shot-note{margin-top:24px;text-align:center;font-size:13px;color:var(--text-muted)}
+        .hero-update{display:inline-flex;align-items:center;gap:8px;margin-bottom:28px;padding:7px 14px;border-radius:20px;background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.2);font-size:13px;font-weight:600;color:var(--accent-cyan);text-decoration:none;transition:background .2s,border-color .2s}
+        .hero-update:hover{background:rgba(14,165,233,0.14);border-color:rgba(14,165,233,0.4)}
+        .hero-update .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-cyan);box-shadow:0 0 0 4px rgba(14,165,233,0.15)}
+        .feature-new-badge{position:absolute;top:16px;right:16px;background:rgba(14,165,233,0.12);color:var(--accent-cyan);padding:4px 10px;border-radius:6px;font-size:11px;font-weight:800;z-index:1}
+        .new-style-badge{position:absolute;top:12px;right:12px;background:rgba(14,165,233,0.15);color:var(--accent-cyan);padding:4px 10px;border-radius:6px;font-size:11px;font-weight:800;z-index:2}
+        .hud-shot-note{margin-top:8px;font-size:11px;line-height:1.6;color:var(--accent-gold);max-width:320px}
+        .gallery-note{margin-top:28px;text-align:center;font-size:13px;color:var(--text-muted)}
+        .export-card.wide{grid-column:span 2}
+
         .video-showcase{background:var(--bg-secondary)}
         .video-grid{display:grid;grid-template-columns:1fr;gap:24px;max-width:680px;margin:0 auto}
         .video-card{background:var(--bg-card);border-radius:16px;border:1px solid var(--border-color);overflow:hidden;transition:transform .2s,box-shadow .2s}
@@ -209,11 +239,14 @@
             .features-grid{grid-template-columns:repeat(2,1fr)}.feature-card.wide{grid-column:span 2}
             .hud-gallery{grid-template-columns:repeat(2,1fr)}
             .dm-cards{grid-template-columns:1fr}
+            .new-grid{grid-template-columns:1fr}
+            .new-stats{grid-template-columns:repeat(2,1fr)}
         }
         @media(max-width:768px){
             .hero-text h1{font-size:36px}.section-header h2{font-size:30px}
             .workflow-steps{grid-template-columns:1fr}.features-grid{grid-template-columns:1fr}.feature-card.wide{grid-column:span 1}
-            .hud-gallery{grid-template-columns:1fr}.export-features{grid-template-columns:1fr}.data-grid{grid-template-columns:1fr}
+            .hud-gallery{grid-template-columns:1fr}.export-features{grid-template-columns:1fr}.export-card.wide{grid-column:span 1}.data-grid{grid-template-columns:1fr}
+            .new-stats{grid-template-columns:1fr}
             .nav-links{display:none}
             footer .container{flex-direction:column;gap:16px;text-align:center}
         }
@@ -248,6 +281,7 @@
                 GPX Video Editor
             </a>
             <ul class="nav-links">
+                <li><a href="#new" data-i18n="nav_new">新功能</a></li>
                 <li><a href="#videos" data-i18n="nav_videos">视频预览</a></li>
                 <li><a href="#workflow" data-i18n="nav_workflow">使用流程</a></li>
                 <li><a href="#features" data-i18n="nav_features">核心功能</a></li>
@@ -271,7 +305,8 @@
     <div class="container">
         <div class="hero-text">
             <h1 data-i18n-html="hero_h1">为运动视频<br><span class="gradient-text">注入专业数据</span></h1>
-            <p data-i18n="hero_desc">将 GPX/FIT 轨迹数据与视频完美融合，用精美的 HUD 叠加层展示速度、功率、海拔、心率等实时数据。支持 GoPro GPS 自动提取，让你的运动视频更具专业质感。</p>
+            <p data-i18n="hero_desc">将 GPX/FIT 轨迹数据与视频完美融合，用精美的 HUD 叠加层展示速度、功率、海拔、心率等实时数据。支持 GoPro GPS 自动提取、真 3D 轨迹 HUD 与透明 HUD 导出，让你的运动视频更具专业质感。</p>
+            <a href="#new" class="hero-update"><span class="dot"></span><span data-i18n="hero_update">新增：真 3D 轨迹 HUD · 透明 HUD 导出 · 故事模式 2.0</span></a>
             <div class="hero-buttons">
                 <a href="https://apps.apple.com/app/gpxvideoeditor/id6762338535" class="btn-primary" data-i18n-html="hero_btn_download">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -315,6 +350,85 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="whats-new" id="new">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-badge badge-gold" data-i18n="new_badge">2026 新功能</span>
+            <h2 data-i18n="new_title">更真实的轨迹，更自由的后期</h2>
+            <p data-i18n="new_subtitle">从真 3D 轨迹视角到透明 HUD 素材导出，这一版为运动视频带来更多创作空间</p>
+        </div>
+        <div class="new-grid">
+            <div class="new-card fade-in">
+                <div class="new-card-media">
+                    <img src="images/features/true-3d-track-hud.png" alt="True 3D Track HUD" onload="this.style.display='block';this.nextElementSibling.style.display='none'" onerror="this.remove()">
+                    <div class="shot-hint">
+                        <span class="shot-tag" data-i18n="shot_tag">截图待补</span>
+                        <p data-i18n="new1_hint">打开 App，添加「轨迹」HUD，相机模式选择「真 3D」，设置俯仰角 45°、相机距离 90 m，播放到弯道画面，截取视频预览窗口。</p>
+                        <code>images/features/true-3d-track-hud.png</code>
+                    </div>
+                </div>
+                <div class="new-card-body">
+                    <span class="new-tag">NEW</span>
+                    <h3 data-i18n="new1_title">真 3D 轨迹 HUD</h3>
+                    <p data-i18n="new1_desc">在 2D 俯视与真 3D 相机之间一键切换。可调节相机俯仰角（0–90°）与距离（30–300 m），让赛道纵深、弯道走线和前方路况更直观；仅渲染视频覆盖路段，画面更聚焦。</p>
+                </div>
+            </div>
+            <div class="new-card fade-in">
+                <div class="new-card-media">
+                    <img src="images/features/transparent-hud-export.png" alt="Transparent HUD Export" onload="this.style.display='block';this.nextElementSibling.style.display='none'" onerror="this.remove()">
+                    <div class="shot-hint">
+                        <span class="shot-tag" data-i18n="shot_tag">截图待补</span>
+                        <p data-i18n="new2_hint">打开导出对话框，选择「透明 HUD」模式，截取包含模式选项与 ProRes 4444 说明的面板。</p>
+                        <code>images/features/transparent-hud-export.png</code>
+                    </div>
+                </div>
+                <div class="new-card-body">
+                    <span class="new-tag">NEW</span>
+                    <h3 data-i18n="new2_title">透明 HUD 导出</h3>
+                    <p data-i18n="new2_desc">新增透明 HUD 导出模式：仅渲染 HUD 与故事卡片图层，输出带 Alpha 通道的 ProRes 4444 .mov，可直接导入 Final Cut Pro、DaVinci Resolve 等软件进行二次合成。</p>
+                </div>
+            </div>
+            <div class="new-card fade-in">
+                <div class="new-card-media">
+                    <img src="images/features/pearl-track-hud.png" alt="Pearl marker and comet trail" onload="this.style.display='block';this.nextElementSibling.style.display='none'" onerror="this.remove()">
+                    <div class="shot-hint">
+                        <span class="shot-tag" data-i18n="shot_tag">截图待补</span>
+                        <p data-i18n="new3_hint">轨迹 HUD 选择「Classic」，展开珍珠颜色、大小、呼吸与彗尾设置，截取设置面板和预览画面。</p>
+                        <code>images/features/pearl-track-hud.png</code>
+                    </div>
+                </div>
+                <div class="new-card-body">
+                    <span class="new-tag">NEW</span>
+                    <h3 data-i18n="new3_title">珍珠标记与彗尾</h3>
+                    <p data-i18n="new3_desc">经典轨迹风格新增发光珍珠标记：5 种颜色、0.5×–2.0× 大小、呼吸动画可独立控制；还可开启彗尾拖影，并选择 40 / 100 / 160 m 尾长，让轨迹更有速度感。</p>
+                </div>
+            </div>
+            <div class="new-card fade-in">
+                <div class="new-card-media">
+                    <img src="images/features/story-mode-settings.png" alt="Story Mode 2.0 settings" onload="this.style.display='block';this.nextElementSibling.style.display='none'" onerror="this.remove()">
+                    <div class="shot-hint">
+                        <span class="shot-tag" data-i18n="shot_tag">截图待补</span>
+                        <p data-i18n="new4_hint">打开 Story Mode 设置页，截取「事件选择」列表（含各类别开关和阈值滑杆）与风格选择区域。</p>
+                        <code>images/features/story-mode-settings.png</code>
+                    </div>
+                </div>
+                <div class="new-card-body">
+                    <span class="new-tag">NEW</span>
+                    <h3 data-i18n="new4_title">故事模式 2.0</h3>
+                    <p data-i18n="new4_desc">可按发夹弯、急转弯、最高速度、最大坡度、最大心率、最大功率与故事序列逐项开关并设置阈值；提供极简 / 标准 / 动态三档密度，精准控制高光时刻数量。</p>
+                </div>
+            </div>
+        </div>
+        <div class="new-stats fade-in">
+            <div class="new-stat"><strong>80+</strong><span data-i18n="new_stats_hud">HUD 风格</span></div>
+            <div class="new-stat"><strong>7</strong><span data-i18n="new_stats_categories">HUD 类别</span></div>
+            <div class="new-stat"><strong>2</strong><span data-i18n="new_stats_cameras">轨迹相机模式</span></div>
+            <div class="new-stat"><strong>3</strong><span data-i18n="new_stats_langs">界面语言</span></div>
+        </div>
+        <p class="shot-note" data-i18n="new_shot_note">标注「截图待补」的位置已预留图片路径，按提示截图并覆盖对应文件后会自动显示。</p>
     </div>
 </section>
 
@@ -386,7 +500,7 @@
                 <div class="step-number">4</div>
                 <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
                 <h3 data-i18n="step4_title">定制 & 导出</h3>
-                <p data-i18n="step4_desc">选择心仪的 HUD 风格，调整颜色、透明度和数据项，然后导出高清视频。支持多种时长选项。</p>
+                <p data-i18n="step4_desc">选择心仪的 HUD 风格与真 3D 轨迹视角，调整珍珠、彗尾等细节，然后导出高清成片，或导出带 Alpha 的透明 HUD 素材用于后期合成。</p>
             </div>
         </div>
     </div>
@@ -416,9 +530,10 @@
                 <p data-i18n="feat3_desc">每种 HUD 风格都支持自定义强调色，一键切换颜色主题，让 HUD 与视频画面完美融合。</p>
             </div>
             <div class="feature-card fade-in">
+                <span class="feature-new-badge">NEW</span>
                 <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div>
                 <h3 data-i18n="feat4_title">轨迹地图叠加</h3>
-                <p data-i18n="feat4_desc">矢量轨迹地图：基于 Metal + GPU Shader 渲染的俯视轨迹 HUD，转弯时旋转丝滑流畅。卫星地图 HUD：真实卫星航拍地图叠加在视频上，直观展示完整骑行路线与当前位置。支持高德地图和 Apple 地图，可切换地图区域。</p>
+                <p data-i18n="feat4_desc">矢量轨迹地图：基于 Metal + GPU Shader 渲染，新增真 3D 相机视角，可在 2D 俯视与真 3D 间切换，并调节俯仰角与相机距离；经典轨迹风格还提供发光珍珠标记、呼吸动画与彗尾拖影。卫星地图 HUD 支持高德地图与 OpenStreetMap，可切换地图区域。</p>
             </div>
             <div class="feature-card wide fade-in">
                 <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -433,12 +548,13 @@
             <div class="feature-card fade-in">
                 <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
                 <h3 data-i18n="feat7_title">预设主题一键切换</h3>
-                <p data-i18n="feat7_desc">内置经典竞速、全息投影、海岸骑行等多套预设主题，一键切换所有 HUD 面板风格，快速打造统一视觉风格。</p>
+                <p data-i18n="feat7_desc">内置经典竞速、全息投影、海岸骑行等多套预设主题，一键切换所有 HUD 面板风格。HUD 风格库已扩展至 7 大类别 80+ 种风格，并持续更新。</p>
             </div>
             <div class="feature-card fade-in">
+                <span class="feature-new-badge">NEW</span>
                 <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polygon points="10 8 10 12 14 10"/></svg></div>
                 <h3 data-i18n="feat8_title">电影叙事卡片</h3>
-                <p data-i18n="feat8_desc">自动检测发夹弯、速度爆发、陡坡爬升、心率峰值等运动高光时刻，生成电影级叙事卡片叠加在视频上。可调节密度与转场效果，为运动视频注入故事节奏。</p>
+                <p data-i18n="feat8_desc">故事模式 2.0：自动识别发夹弯、急转弯、速度爆发、陡坡爬升、心率峰值与功率峰值等高光时刻。可按事件类别独立开关并设置阈值，支持极简/标准/动态三档密度，控制成片节奏。</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
@@ -496,10 +612,11 @@
         <div class="section-header fade-in">
             <span class="section-badge badge-gold" data-i18n="hud_badge">HUD 风格</span>
             <h2 data-i18n="hud_title">精美 HUD 风格库</h2>
-            <p data-i18n="hud_subtitle">7 大类别 50+ 种风格任你选择</p>
+            <p data-i18n="hud_subtitle">7 大类别 80+ 种风格任你选择</p>
         </div>
         <div class="hud-categories fade-in" id="hudCategories"></div>
         <div class="hud-gallery" id="hudGallery"></div>
+        <p class="gallery-note" data-i18n="hud_note">图库展示部分风格，App 内共 7 大类别 80+ 种风格；标注 NEW 的为近期新增。</p>
     </div>
 </section>
 
@@ -582,6 +699,18 @@
                     <p data-i18n="export4_desc">支持从视频开头或当前播放位置开始导出，精准控制导出范围。</p>
                 </div>
             </div>
+            <div class="export-card wide fade-in">
+                <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/><path d="M14 14l4 4"/><path d="M18 14v4h-4"/></svg></div>
+                <div>
+                    <h3 data-i18n="export5_title">透明 HUD 导出（新增）</h3>
+                    <p data-i18n="export5_desc">选择「透明 HUD」模式，仅导出 HUD 与故事卡片图层（ProRes 4444 MOV，带 Alpha 通道），方便在 Final Cut Pro、DaVinci Resolve 等软件中自由合成。</p>
+                    <div class="duration-pills">
+                        <span class="duration-pill">ProRes 4444</span>
+                        <span class="duration-pill">Alpha</span>
+                        <span class="duration-pill">HUD only</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -622,6 +751,16 @@
                 </div>
                 <div class="faq-answer">
                     <div class="faq-answer-inner" data-i18n="faq_a3">大多数遥测工具仍然需要手动对齐。问题在于，即使只有 2~3 秒的偏差，也会让一个急弯看起来完全不对。更可靠的方法是将 GPS 路径与视频画面进行视觉对比，利用道路弯道作为对齐参考点。GPX Video Editor 提供可视化对齐工具，让你通过对比轨迹弯道和视频画面来精确对齐时间轴。</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                    <span class="q-icon">Q</span>
+                    <span class="q-text" data-i18n="faq_q4">能把 HUD 单独导出，放进 Final Cut Pro 或 DaVinci Resolve 里合成吗？</span>
+                    <svg class="q-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq_a4">可以。在导出模式中选择「透明 HUD」，App 会输出带 Alpha 通道的 ProRes 4444 .mov，仅包含 HUD 与故事卡片图层，可直接拖入 Final Cut Pro、DaVinci Resolve 等后期软件叠加到原始素材上。</div>
                 </div>
             </div>
         </div>
@@ -704,8 +843,10 @@ const i18n = {
         nav_faq: '常见问题',
         nav_download: '下载 App',
         nav_devlog: '开发日志',
+        nav_new: '新功能',
         hero_h1: '为运动视频<br><span class="gradient-text">注入专业数据</span>',
-        hero_desc: '将 GPX/FIT 轨迹数据与视频完美融合，用精美的 HUD 叠加层展示速度、功率、海拔、心率等实时数据。支持 GoPro GPS 自动提取，让你的运动视频更具专业质感。',
+        hero_desc: '将 GPX/FIT 轨迹数据与视频完美融合，用精美的 HUD 叠加层展示速度、功率、海拔、心率等实时数据。支持 GoPro GPS 自动提取、真 3D 轨迹 HUD 与透明 HUD 导出，让你的运动视频更具专业质感。',
+        hero_update: '新增：真 3D 轨迹 HUD · 透明 HUD 导出 · 故事模式 2.0',
         hero_btn_download: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> 下载 macOS 版',
         hero_btn_learn: '了解更多 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>',
         mockup_hud_config: 'HUD 配置',
@@ -725,7 +866,7 @@ const i18n = {
         step3_title: '对齐数据',
         step3_desc: '通过时间轴精确对齐 GPX 数据与视频画面，支持手动微调。确保 HUD 数据与视频内容完美同步。',
         step4_title: '定制 & 导出',
-        step4_desc: '选择心仪的 HUD 风格，调整颜色、透明度和数据项，然后导出高清视频。支持多种时长选项。',
+        step4_desc: '选择心仪的 HUD 风格与真 3D 轨迹视角，调整珍珠、彗尾等细节，然后导出高清成片，或导出带 Alpha 的透明 HUD 素材用于后期合成。',
         features_badge: '核心功能',
         features_title: '为专业运动视频而生',
         features_subtitle: '丰富的 HUD 风格与灵活的配置选项',
@@ -736,15 +877,15 @@ const i18n = {
         feat3_title: '自定义强调色',
         feat3_desc: '每种 HUD 风格都支持自定义强调色，一键切换颜色主题，让 HUD 与视频画面完美融合。',
         feat4_title: '轨迹地图叠加',
-        feat4_desc: '矢量轨迹地图：基于 Metal + GPU Shader 渲染的俯视轨迹 HUD，转弯时旋转丝滑流畅。卫星地图 HUD：真实卫星航拍地图叠加在视频上，直观展示完整骑行路线与当前位置。支持高德地图和 Apple 地图，可切换地图区域。',
+        feat4_desc: '矢量轨迹地图：基于 Metal + GPU Shader 渲染，新增真 3D 相机视角，可在 2D 俯视与真 3D 间切换，并调节俯仰角与相机距离；经典轨迹风格还提供发光珍珠标记、呼吸动画与彗尾拖影。卫星地图 HUD 支持高德地图与 OpenStreetMap，可切换地图区域。',
         feat5_title: '精确时间对齐',
         feat5_desc: '通过可视化时间轴，精确对齐 GPX/FIT 时间戳与视频时间。支持在卫星地图上点击轨迹任意位置快速定位，利用道路弯道等地理标志进行视觉对齐。支持播放预览确认同步效果，可随时撤销对齐重新调整，确保数据与画面完美匹配。',
         feat6_title: 'GoPro GPS 自动提取',
         feat6_desc: '导入 GoPro 视频时自动检测并提取内嵌 GPS 数据，无需单独导入 GPX/FIT 文件。自动计算时间偏移并同步，也支持将 GoPro GPS 作为轨迹地图数据源。',
         feat7_title: '预设主题一键切换',
-        feat7_desc: '内置经典竞速、全息投影、海岸骑行等多套预设主题，一键切换所有 HUD 面板风格，快速打造统一视觉风格。',
+        feat7_desc: '内置经典竞速、全息投影、海岸骑行等多套预设主题，一键切换所有 HUD 面板风格。HUD 风格库已扩展至 7 大类别 80+ 种风格，并持续更新。',
         feat8_title: '电影叙事卡片',
-        feat8_desc: '自动检测发夹弯、速度爆发、陡坡爬升、心率峰值等运动高光时刻，生成电影级叙事卡片叠加在视频上。可调节密度与转场效果，为运动视频注入故事节奏。',
+        feat8_desc: '故事模式 2.0：自动识别发夹弯、急转弯、速度爆发、陡坡爬升、心率峰值与功率峰值等高光时刻。可按事件类别独立开关并设置阈值，支持极简/标准/动态三档密度，控制成片节奏。',
         feat9_title: 'Metal GPU 加速导出',
         feat9_desc: '视频导出全流程优化，HUD 面板智能缓存避免重复渲染，Metal 渲染管线加速轨迹地图绘制，显著缩短导出等待时间。',
         dm_badge: '数据叠加',
@@ -765,7 +906,8 @@ const i18n = {
         dm3_tag2: '手动精确对齐',
         hud_badge: 'HUD 风格',
         hud_title: '精美 HUD 风格库',
-        hud_subtitle: '7 大类别 50+ 种风格任你选择',
+        hud_subtitle: '7 大类别 80+ 种风格任你选择',
+        hud_note: '图库展示部分风格，App 内共 7 大类别 80+ 种风格；标注 NEW 的为近期新增。',
         data_badge: '数据指标',
         data_title: '全方位运动数据展示',
         data_subtitle: '支持多种运动数据类型，公制/英制自由切换',
@@ -793,6 +935,8 @@ const i18n = {
         export3_desc: '可选择保留视频原始音轨或替换为自定义音乐，让运动视频声画俱佳。',
         export4_title: '起始位置选择',
         export4_desc: '支持从视频开头或当前播放位置开始导出，精准控制导出范围。',
+        export5_title: '透明 HUD 导出（新增）',
+        export5_desc: '选择「透明 HUD」模式，仅导出 HUD 与故事卡片图层（ProRes 4444 MOV，带 Alpha 通道），方便在 Final Cut Pro、DaVinci Resolve 等软件中自由合成。',
         cta_h2: '准备好打造你的<span class="gradient-text" style="background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">专业运动视频</span>了吗？',
         cta_desc: '下载 GPX Video Editor，让你的每一段运动记录都精彩呈现',
         cta_btn: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> 下载 macOS 版本',
@@ -802,6 +946,27 @@ const i18n = {
         video_badge: '视频预览',
         video_title: '看看效果如何',
         video_subtitle: '真实用户用 GPX Video Editor 制作的运动视频',
+        new_badge: '2026 新功能',
+        new_title: '更真实的轨迹，更自由的后期',
+        new_subtitle: '从真 3D 轨迹视角到透明 HUD 素材导出，这一版为运动视频带来更多创作空间',
+        new1_title: '真 3D 轨迹 HUD',
+        new1_desc: '在 2D 俯视与真 3D 相机之间一键切换。可调节相机俯仰角（0–90°）与距离（30–300 m），让赛道纵深、弯道走线和前方路况更直观；仅渲染视频覆盖路段，画面更聚焦。',
+        new1_hint: '打开 App，添加「轨迹」HUD，相机模式选择「真 3D」，设置俯仰角 45°、相机距离 90 m，播放到弯道画面，截取视频预览窗口。',
+        new2_title: '透明 HUD 导出',
+        new2_desc: '新增透明 HUD 导出模式：仅渲染 HUD 与故事卡片图层，输出带 Alpha 通道的 ProRes 4444 .mov，可直接导入 Final Cut Pro、DaVinci Resolve 等软件进行二次合成。',
+        new2_hint: '打开导出对话框，选择「透明 HUD」模式，截取包含模式选项与 ProRes 4444 说明的面板。',
+        new3_title: '珍珠标记与彗尾',
+        new3_desc: '经典轨迹风格新增发光珍珠标记：5 种颜色、0.5×–2.0× 大小、呼吸动画可独立控制；还可开启彗尾拖影，并选择 40 / 100 / 160 m 尾长，让轨迹更有速度感。',
+        new3_hint: '轨迹 HUD 选择「Classic」，展开珍珠颜色、大小、呼吸与彗尾设置，截取设置面板和预览画面。',
+        new4_title: '故事模式 2.0',
+        new4_desc: '可按发夹弯、急转弯、最高速度、最大坡度、最大心率、最大功率与故事序列逐项开关并设置阈值；提供极简 / 标准 / 动态三档密度，精准控制高光时刻数量。',
+        new4_hint: '打开 Story Mode 设置页，截取「事件选择」列表（含各类别开关和阈值滑杆）与密度选择区域。',
+        new_stats_hud: 'HUD 风格',
+        new_stats_categories: 'HUD 类别',
+        new_stats_cameras: '轨迹相机模式',
+        new_stats_langs: '界面语言',
+        new_shot_note: '标注「截图待补」的位置已预留图片路径，按提示截图并覆盖对应文件后会自动显示。',
+        shot_tag: '截图待补',
 
         faq_badge: '常见问题',
         faq_title: '你可能想知道的',
@@ -812,6 +977,8 @@ const i18n = {
         faq_a2: 'GPX Video Editor 对于 GoPro 开启了 GPS 模式录制的视频，会自动抽取视频文件中的 GPMF 元数据，这样即使没有运动手表或码表，也能在 HUD 显示速度、海拔和坡度的计算值以及骑行路径轨迹；如果有运动手表或码表，本 App 独特的算法可以对齐 GoPro 视频和运动手表记录的 GPX 文件信息进行自动对齐并合并，从而叠加显示更多生理和地理信息。',
         faq_q3: '手动同步快把我逼疯了，有没有更好的方法？',
         faq_a3: '大多数遥测工具仍然需要手动对齐。问题在于，即使只有 2~3 秒的偏差，也会让一个急弯看起来完全不对。更可靠的方法是将 GPS 路径与视频画面进行视觉对比，利用道路弯道作为对齐参考点。GPX Video Editor 提供可视化对齐工具，让你通过对比轨迹弯道和视频画面来精确对齐时间轴。',
+        faq_q4: '能把 HUD 单独导出，放进 Final Cut Pro 或 DaVinci Resolve 里合成吗？',
+        faq_a4: '可以。在导出模式中选择「透明 HUD」，App 会输出带 Alpha 通道的 ProRes 4444 .mov，仅包含 HUD 与故事卡片图层，可直接拖入 Final Cut Pro、DaVinci Resolve 等后期软件叠加到原始素材上。',
         devlog_badge: '开发日志',
         devlog_title: '设计背后的思考',
         devlog_subtitle: '深入了解每一项功能背后的设计理念与技术挑战',
@@ -841,8 +1008,10 @@ const i18n = {
         nav_faq: 'FAQ',
         nav_download: 'Download',
         nav_devlog: 'Dev Log',
+        nav_new: "What's New",
         hero_h1: 'Infuse Your Videos<br><span class="gradient-text">With Pro Data</span>',
-        hero_desc: 'Seamlessly blend GPX/FIT track data with your videos. Overlay stunning HUD layers showing speed, power, altitude, heart rate and more. GoPro GPS auto-extract supported — give your sports videos a professional edge.',
+        hero_desc: 'Seamlessly blend GPX/FIT track data with your videos. Overlay stunning HUD layers showing speed, power, altitude, heart rate and more. GoPro GPS auto-extract, true 3D track HUD and transparent HUD export — give your sports videos a professional edge.',
+        hero_update: 'New: True 3D Track HUD · Transparent HUD Export · Story Mode 2.0',
         hero_btn_download: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download for macOS',
         hero_btn_learn: 'Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>',
         mockup_hud_config: 'HUD Config',
@@ -862,7 +1031,7 @@ const i18n = {
         step3_title: 'Align Data',
         step3_desc: 'Precisely align GPX data with video frames using the visual timeline. Fine-tune manually to ensure perfect synchronization.',
         step4_title: 'Customize & Export',
-        step4_desc: 'Choose your favorite HUD style, adjust colors, transparency and data items, then export in high definition. Multiple duration options available.',
+        step4_desc: 'Choose your favorite HUD style and true 3D track view, fine-tune the pearl marker and comet trail, then export a high-definition video or an alpha-channel transparent HUD layer for compositing.',
         features_badge: 'Features',
         features_title: 'Built for Professional Sports Videos',
         features_subtitle: 'Rich HUD styles and flexible configuration options',
@@ -873,15 +1042,15 @@ const i18n = {
         feat3_title: 'Custom Accent Colors',
         feat3_desc: 'Every HUD style supports custom accent colors. Switch color themes with one click to blend HUD seamlessly with your footage.',
         feat4_title: 'Track Map Overlay',
-        feat4_desc: 'Vector Track Map: A top-down track HUD powered by Metal + GPU Shader rendering, with buttery-smooth rotation through turns. Satellite Map HUD: Overlay real satellite/aerial imagery on your video to showcase the full route and current position. Supports Gaode Maps and Apple Maps with switchable regions.',
+        feat4_desc: 'Vector Track Map: Metal + GPU Shader rendering, now with a true 3D camera that switches between top-down 2D and true 3D with adjustable pitch and camera distance. The Classic track style also adds a glowing pearl marker, breathing animation and comet trail. Satellite Map HUD supports Gaode Maps and OpenStreetMap with switchable regions.',
         feat5_title: 'Precise Time Alignment',
         feat5_desc: 'Use the visual timeline to precisely align GPX/FIT timestamps with video time. Click anywhere on the satellite map to jump to that point on the track — use road bends and geographic landmarks as visual alignment references. Preview playback to confirm sync, undo and re-adjust anytime for a perfect match.',
         feat6_title: 'GoPro GPS Auto-Extract',
         feat6_desc: 'Automatically detect and extract embedded GPS data when importing GoPro videos — no separate GPX/FIT file needed. Auto-calculates time offset and syncs. GoPro GPS can also be used as a track map data source.',
         feat7_title: 'Preset Themes',
-        feat7_desc: 'Built-in preset themes — Classic Racing, Hologram, Coast Ride and more. Switch all HUD panel styles with one click for a unified visual look.',
+        feat7_desc: 'Built-in preset themes — Classic Racing, Hologram, Coast Ride and more. Switch all HUD panel styles with one click for a unified visual look. The HUD library now spans 7 categories and 80+ styles, with more on the way.',
         feat8_title: 'Cinematic Story Cards',
-        feat8_desc: 'Auto-detect sport highlights — hairpin turns, speed bursts, hard climbs, heart rate peaks — and generate cinematic story cards overlaid on your video. Adjust density and transition effects to give your sports video a storytelling rhythm.',
+        feat8_desc: 'Story Mode 2.0 auto-detects highlights — hairpin turns, sharp turns, speed bursts, hard climbs, heart rate peaks and power peaks. Toggle each event category and set its threshold independently, and choose Minimal / Standard / Dynamic density to control the pacing.',
         feat9_title: 'Metal GPU-Accelerated Export',
         feat9_desc: 'Fully optimized export pipeline — intelligent HUD panel caching avoids redundant rendering, Metal rendering pipeline accelerates track map drawing, significantly reducing export wait times.',
         dm_badge: 'Data Overlay',
@@ -902,7 +1071,8 @@ const i18n = {
         dm3_tag2: 'Manual Precision Align',
         hud_badge: 'HUD Styles',
         hud_title: 'Stunning HUD Style Library',
-        hud_subtitle: '7 categories, 50+ styles to choose from',
+        hud_subtitle: '7 categories, 80+ styles to choose from',
+        hud_note: 'The gallery shows a selection. The app includes 80+ styles across 7 categories; items marked NEW were added recently.',
         data_badge: 'Metrics',
         data_title: 'Comprehensive Sports Data Display',
         data_subtitle: 'Support for multiple data types with metric/imperial switching',
@@ -930,6 +1100,8 @@ const i18n = {
         export3_desc: 'Keep the original audio track or replace with custom music for a complete audiovisual experience.',
         export4_title: 'Start Position Selection',
         export4_desc: 'Start exporting from the beginning or the current playback position for precise range control.',
+        export5_title: 'Transparent HUD Export (New)',
+        export5_desc: 'Choose Transparent HUD mode to export only the HUD and story-card layers as a ProRes 4444 MOV with an alpha channel — ready for compositing in Final Cut Pro, DaVinci Resolve and more.',
         cta_h2: 'Ready to Create Your <span class="gradient-text" style="background:linear-gradient(135deg,var(--accent-cyan),var(--accent-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Pro Sports Video</span>?',
         cta_desc: 'Download GPX Video Editor and make every sports recording shine',
         cta_btn: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download for macOS',
@@ -939,6 +1111,27 @@ const i18n = {
         video_badge: 'Video Preview',
         video_title: 'See It in Action',
         video_subtitle: 'Real sports videos made with GPX Video Editor',
+        new_badge: "What's New in 2026",
+        new_title: 'More Realistic Tracks, More Post-Production Freedom',
+        new_subtitle: 'From a true 3D track view to transparent HUD assets, this release gives sports videos more creative room',
+        new1_title: 'True 3D Track HUD',
+        new1_desc: 'Switch between top-down 2D and a true 3D camera in one click. Adjust camera pitch (0–90°) and distance (30–300 m) to read track depth, corner lines and upcoming road conditions at a glance. Only the video-covered route is rendered for a more focused frame.',
+        new1_hint: 'Open the app, add a Track HUD, choose True 3D, set pitch to 45° and distance to 90 m, play to a corner, then capture the video preview area.',
+        new2_title: 'Transparent HUD Export',
+        new2_desc: 'A new Transparent HUD export mode renders only HUD and story-card layers as a ProRes 4444 .mov with alpha — ready to import into Final Cut Pro, DaVinci Resolve or any compositing workflow.',
+        new2_hint: 'Open the export dialog, choose Transparent HUD, and capture the panel showing the mode option and the ProRes 4444 hint.',
+        new3_title: 'Pearl Marker & Comet Trail',
+        new3_desc: 'The Classic track style adds a glowing pearl marker with 5 colors, 0.5×–2.0× size and an independent breathing toggle. You can also enable a comet trail and pick 40 / 100 / 160 m tail length for a stronger sense of speed.',
+        new3_hint: 'Select the Classic track style, expand the pearl color, size, breathing and comet controls, then capture the settings panel together with the preview.',
+        new4_title: 'Story Mode 2.0',
+        new4_desc: 'Toggle hairpin turns, sharp turns, max speed, max grade, max heart rate, max power and story sequence independently, each with its own threshold. Choose Minimal / Standard / Dynamic density to control how many highlights appear.',
+        new4_hint: 'Open the Story Mode settings page and capture the Event Selection list (switches and threshold sliders) together with the density selector.',
+        new_stats_hud: 'HUD Styles',
+        new_stats_categories: 'HUD Categories',
+        new_stats_cameras: 'Track Camera Modes',
+        new_stats_langs: 'UI Languages',
+        new_shot_note: 'Each “Screenshot pending” tile already has a reserved image path. Capture the shot and overwrite the file — it will appear automatically.',
+        shot_tag: 'Screenshot pending',
 
         faq_badge: 'FAQ',
         faq_title: 'You Might Be Wondering',
@@ -949,6 +1142,8 @@ const i18n = {
         faq_a2: 'GPX Video Editor automatically extracts GPMF metadata from GoPro videos recorded with GPS enabled, so even without a sports watch or bike computer, the HUD can display speed, altitude, gradient calculations and the riding route. If you do have a sports watch or bike computer, the app\'s unique algorithm can automatically align and merge the GoPro video with the GPX file from your device, overlaying even more physiological and geographic data.',
         faq_q3: 'Manual synchronization is driving me crazy. Is there a better way?',
         faq_a3: 'Most telemetry tools still require manual alignment. The problem is that even a 2~3 second offset can make a sharp corner look completely wrong. A more reliable method is to compare the GPS path visually with the video footage and use road bends as alignment reference points. GPX Video Editor provides a visual alignment tool that lets you precisely align the timeline by comparing track bends with the video frame.',
+        faq_q4: 'Can I export the HUD separately and composite it in Final Cut Pro or DaVinci Resolve?',
+        faq_a4: 'Yes. Choose Transparent HUD as the export mode and the app outputs a ProRes 4444 .mov with an alpha channel containing only the HUD and story-card layers — drag it into Final Cut Pro, DaVinci Resolve or another editor and overlay it on your original footage.',
         devlog_badge: 'Dev Log',
         devlog_title: 'Design Insights',
         devlog_subtitle: 'Dive into the design philosophy and technical challenges behind every feature',
@@ -973,70 +1168,60 @@ const i18n = {
 
 const hudData = {
     'modern-bar': [
-        { name: 'Supercar Rev', desc_zh: '超级跑车转速风格', desc_en: 'Supercar Rev Tachometer', img: 'images/hud/modern-bar/supercar-rev.png' },
-        { name: 'Sci-Fi Capsule', desc_zh: '科幻胶囊风格', desc_en: 'Sci-Fi Capsule Display', img: 'images/hud/modern-bar/sci-fi-capsule.png' },
-        { name: 'Mecha Vector', desc_zh: '机甲矢量风格', desc_en: 'Mecha Vector HUD', img: 'images/hud/modern-bar/mecha-vector.png' },
-        { name: 'F1 Telemetry', desc_zh: 'F1 遥测风格', desc_en: 'F1 Telemetry Bar', img: 'images/hud/modern-bar/f1-telemetry.png' },
-        { name: 'Minimalist Slash', desc_zh: '极简斜杠风格', desc_en: 'Minimalist Slash Bar', img: 'images/hud/modern-bar/minimalist-slash.png' },
-        { name: 'Cyber Blade', desc_zh: '赛博光刃风格', desc_en: 'Cyber Blade Bar', img: 'images/hud/modern-bar/cyber-blade.png' },
-        { name: 'Tactical Array', desc_zh: '战术机甲风格', desc_en: 'Tactical Array Bar', img: 'images/hud/modern-bar/tactical-array.png' },
-        { name: 'Aero Capsule', desc_zh: '航空胶囊风格', desc_en: 'Aero Capsule Bar', img: 'images/hud/modern-bar/aero-capsule.png' },
+        { name: 'Holographic Core', desc_zh: '全息能量核', desc_en: 'Holographic Core', img: 'images/hud/modern-bar/mecha-vector.png' },
+        { name: 'Sci-Fi Capsule', desc_zh: '科幻胶囊', desc_en: 'Sci-Fi Capsule', img: 'images/hud/modern-bar/sci-fi-capsule.png' },
+        { name: 'F1 Telemetry', desc_zh: 'F1 遥测', desc_en: 'F1 Telemetry', img: 'images/hud/modern-bar/f1-telemetry.png' },
+        { name: 'Cyber Blade', desc_zh: '赛博光刃', desc_en: 'Cyber Blade', img: 'images/hud/modern-bar/cyber-blade.png' },
+        { name: 'Tactical Array', desc_zh: '战术机甲', desc_en: 'Tactical Array', img: 'images/hud/modern-bar/tactical-array.png' },
+        { name: 'Heatmap Grad', desc_zh: '热力渐变（新增）', desc_en: 'Heatmap Grad (New)', img: 'images/hud/modern-bar/heatmap-grad.png', isNew: true, hint_zh: '选择「现代条形」→ Heatmap Grad，截取 HUD 预览', hint_en: 'Choose Modern Bar > Heatmap Grad and capture the HUD preview' },
+        { name: 'Quantum Term', desc_zh: '量子终端（新增）', desc_en: 'Quantum Term (New)', img: 'images/hud/modern-bar/quantum-term.png', isNew: true, hint_zh: '选择「现代条形」→ Quantum Term，截取 HUD 预览', hint_en: 'Choose Modern Bar > Quantum Term and capture the HUD preview' },
+        { name: 'Holo Mesh', desc_zh: '全息网格（新增）', desc_en: 'Holo Mesh (New)', img: 'images/hud/modern-bar/holo-mesh.png', isNew: true, hint_zh: '选择「现代条形」→ Holo Mesh，截取 HUD 预览', hint_en: 'Choose Modern Bar > Holo Mesh and capture the HUD preview' },
+        { name: 'Plasma Core', desc_zh: '等离子反应核（新增）', desc_en: 'Plasma Core (New)', img: 'images/hud/modern-bar/plasma-core.png', isNew: true, hint_zh: '选择「现代条形」→ Plasma Core，截取 HUD 预览', hint_en: 'Choose Modern Bar > Plasma Core and capture the HUD preview' },
+        { name: 'Synthwave Arcade', desc_zh: '合成器波普街机（新增）', desc_en: 'Synthwave Arcade (New)', img: 'images/hud/modern-bar/synthwave-arcade.png', isNew: true, hint_zh: '选择「现代条形」→ Synthwave Arcade，截取 HUD 预览', hint_en: 'Choose Modern Bar > Synthwave Arcade and capture the HUD preview' },
+        { name: 'Acid Burner', desc_zh: '强酸刻录机（新增）', desc_en: 'Acid Burner (New)', img: 'images/hud/modern-bar/acid-burner.png', isNew: true, hint_zh: '选择「现代条形」→ Acid Burner，截取 HUD 预览', hint_en: 'Choose Modern Bar > Acid Burner and capture the HUD preview' },
     ],
     'classic-dial': [
-        { name: 'Classic', desc_zh: '经典表盘风格', desc_en: 'Classic Dial', img: 'images/hud/classic-dial/classic.png' },
-        { name: 'Apple Watch', desc_zh: 'Apple Watch 风格', desc_en: 'Apple Watch Style', img: 'images/hud/classic-dial/apple-watch.png' },
-        { name: 'Drone OSD', desc_zh: '无人机 OSD 风格', desc_en: 'Drone OSD Display', img: 'images/hud/classic-dial/drone-osd.png' },
-        { name: 'Hypercar Neon', desc_zh: '超跑霓虹风格', desc_en: 'Hypercar Neon Dial', img: 'images/hud/classic-dial/hypercar-neon.png' },
-        { name: 'Cafe Racer', desc_zh: '咖啡赛车手风格', desc_en: 'Cafe Racer Style', img: 'images/hud/classic-dial/cafe-racer.png' },
-        { name: 'Grand Tourer', desc_zh: '豪华旅行者风格', desc_en: 'Grand Tourer Dial', img: 'images/hud/classic-dial/grand-tourer.png' },
-        { name: 'Cyberpunk', desc_zh: '赛博朋克风格', desc_en: 'Cyberpunk Dial', img: 'images/hud/classic-dial/cyberpunk.png' },
-        { name: 'Minimalist Volt', desc_zh: '极简荧光风格', desc_en: 'Minimalist Volt Dial', img: 'images/hud/classic-dial/minimalist-volt.png' },
-        { name: 'Aviator Instrument', desc_zh: '飞行仪表风格', desc_en: 'Aviator Instrument', img: 'images/hud/classic-dial/aviator-instrument.png' },
-        { name: 'Spatial Glass', desc_zh: '空间毛玻璃风格', desc_en: 'Spatial Glass Dial', img: 'images/hud/classic-dial/spatial-glass.png' },
-        { name: 'Creamy Donut', desc_zh: '奶油甜甜圈风格', desc_en: 'Creamy Donut Dial', img: 'images/hud/classic-dial/creamy-donut.png' },
-        { name: 'Stealth Chrono', desc_zh: '幽灵计时码表风格', desc_en: 'Stealth Chrono Dial', img: 'images/hud/classic-dial/stealth-chrono.png' },
-        { name: 'Holographic Halo', desc_zh: '全息光环风格', desc_en: 'Holographic Halo Dial', img: 'images/hud/classic-dial/holographic-halo.png' },
-        { name: 'Heritage Brass', desc_zh: '黄铜机械表风格', desc_en: 'Heritage Brass Dial', img: 'images/hud/classic-dial/heritage-brass.png' },
-        { name: 'Pixel Matrix', desc_zh: '像素点阵风格', desc_en: 'Pixel Matrix Dial', img: 'images/hud/classic-dial/pixel-matrix.png' },
+        { name: 'Classic', desc_zh: '经典表盘', desc_en: 'Classic Dial', img: 'images/hud/classic-dial/classic.png' },
+        { name: 'Apple Watch', desc_zh: 'Apple Watch', desc_en: 'Apple Watch', img: 'images/hud/classic-dial/apple-watch.png' },
+        { name: 'Hypercar Neon', desc_zh: '超跑霓虹', desc_en: 'Hypercar Neon', img: 'images/hud/classic-dial/hypercar-neon.png' },
+        { name: 'Heritage Brass', desc_zh: '黄铜机械表', desc_en: 'Heritage Brass', img: 'images/hud/classic-dial/heritage-brass.png' },
+        { name: 'Pixel Matrix', desc_zh: '像素点阵', desc_en: 'Pixel Matrix', img: 'images/hud/classic-dial/pixel-matrix.png' },
+        { name: 'Spatial Glass', desc_zh: '空间毛玻璃全息', desc_en: 'Spatial Glass', img: 'images/hud/classic-dial/spatial-glass.png' },
+        { name: 'Aviator Cockpit', desc_zh: '硬核航空仪表', desc_en: 'Aviator Cockpit', img: 'images/hud/classic-dial/aviator-instrument.png' },
+        { name: 'Holographic Halo', desc_zh: '全息光环', desc_en: 'Holographic Halo', img: 'images/hud/classic-dial/holographic-halo.png' },
+        { name: 'Classic Twin Pods', desc_zh: '经典摩托双炮筒（新增）', desc_en: 'Classic Twin Pods (New)', img: 'images/hud/dual-analog/classic-twin-pods.png', isNew: true },
+        { name: 'Hypercar Binnacle', desc_zh: '超跑双炮筒仪表（新增）', desc_en: 'Hypercar Binnacle (New)', img: 'images/hud/dual-analog/hypercar-binnacle.png', isNew: true },
     ],
     'digital': [
-        { name: 'Cinematic Minimal', desc_zh: '电影极简风格', desc_en: 'Cinematic Minimal Display', img: 'images/hud/digital/cinematic-minimal.png' },
-        { name: 'Tactical OSD', desc_zh: '战术 OSD 风格', desc_en: 'Tactical OSD Panel', img: 'images/hud/digital/tactical-osd.png' },
-        { name: 'Glass Widget', desc_zh: '玻璃组件风格', desc_en: 'Glass Widget Display', img: 'images/hud/digital/glass-widget.png' },
-        { name: 'Polaroid Card', desc_zh: '拍立得卡片风格', desc_en: 'Polaroid Card Display', img: 'images/hud/digital/polaroid-card.png' },
-        { name: 'Flip Lock', desc_zh: '翻页锁风格', desc_en: 'Flip Lock Display', img: 'images/hud/digital/flip-lock.png' },
-        { name: 'Rally Odometer', desc_zh: '拉力码表风格', desc_en: 'Rally Odometer Display', img: 'images/hud/digital/rally-odometer.png' },
-        { name: 'Dash LCD', desc_zh: '超跑液晶风格', desc_en: 'Dash LCD Display', img: 'images/hud/digital/dash-lcd.png' },
+        { name: 'Coast Teal', desc_zh: '海岸青色', desc_en: 'Coast Teal', img: 'images/hud/digital/cinematic-minimal.png' },
+        { name: 'Tactical OSD', desc_zh: '战术穿越', desc_en: 'Tactical OSD', img: 'images/hud/digital/tactical-osd.png' },
+        { name: 'Glass Widget', desc_zh: '玻璃小组件', desc_en: 'Glass Widget', img: 'images/hud/digital/glass-widget.png' },
+        { name: 'Rally Odometer', desc_zh: '拉力码表', desc_en: 'Rally Odometer', img: 'images/hud/digital/rally-odometer.png' },
     ],
     'hex': [
-        { name: 'visionOS Glass', desc_zh: 'visionOS 玻璃风格', desc_en: 'visionOS Glass Panel', img: 'images/hud/hex/visionos-glass.png' },
-        { name: 'Cyber Mecha', desc_zh: '赛博机甲风格', desc_en: 'Cyber Mecha Hex', img: 'images/hud/hex/cyber-mecha.png' },
-        { name: 'Pro Telemetry', desc_zh: '专业遥测风格', desc_en: 'Pro Telemetry Hex', img: 'images/hud/hex/pro-telemetry.png' },
-        { name: 'Sci-Fi Hologram', desc_zh: '科幻全息投影风格', desc_en: 'Sci-Fi Hologram Hex', img: 'images/hud/hex/scifi-hologram.png' },
-        { name: 'Soft Squircle', desc_zh: '柔和皂角六边形风格', desc_en: 'Soft Squircle Hex', img: 'images/hud/hex/soft-squircle.png' },
+        { name: 'visionOS Glass', desc_zh: '空间毛玻璃', desc_en: 'visionOS Glass', img: 'images/hud/hex/visionos-glass.png' },
+        { name: 'Cyber Mecha', desc_zh: '赛博机甲', desc_en: 'Cyber Mecha', img: 'images/hud/hex/cyber-mecha.png' },
+        { name: 'Pro Telemetry', desc_zh: '专业竞技', desc_en: 'Pro Telemetry', img: 'images/hud/hex/pro-telemetry.png' },
+        { name: 'Sci-Fi Hologram', desc_zh: '科幻全息投影', desc_en: 'Sci-Fi Hologram', img: 'images/hud/hex/scifi-hologram.png' },
     ],
     'elevation': [
-        { name: 'Classic', desc_zh: '经典海拔图风格', desc_en: 'Classic Elevation', img: 'images/hud/elevation/classic.png' },
-        { name: 'Cinematic Fade', desc_zh: '电影渐变风格', desc_en: 'Cinematic Fade Chart', img: 'images/hud/elevation/cinematic-fade.png' },
-        { name: 'Pro Wireframe', desc_zh: '专业线框风格', desc_en: 'Pro Wireframe Chart', img: 'images/hud/elevation/pro-wireframe.png' },
-        { name: 'Holographic Scan', desc_zh: '全息扫描风格', desc_en: 'Holographic Scan Chart', img: 'images/hud/elevation/holographic-scan.png' },
-        { name: 'Soft Dreamy', desc_zh: '柔和梦幻风格', desc_en: 'Soft Dreamy Chart', img: 'images/hud/elevation/soft-dreamy.png' },
+        { name: 'Classic', desc_zh: '经典', desc_en: 'Classic', img: 'images/hud/elevation/classic.png' },
+        { name: 'Cinematic Fade', desc_zh: '大片渐变', desc_en: 'Cinematic Fade', img: 'images/hud/elevation/cinematic-fade.png' },
+        { name: 'Pro Wireframe', desc_zh: '专业线框', desc_en: 'Pro Wireframe', img: 'images/hud/elevation/pro-wireframe.png' },
+        { name: 'Holographic Scan', desc_zh: '全息扫描', desc_en: 'Holographic Scan', img: 'images/hud/elevation/holographic-scan.png' },
+        { name: 'Soft Dreamy', desc_zh: '柔和梦幻', desc_en: 'Soft Dreamy', img: 'images/hud/elevation/soft-dreamy.png' },
     ],
     'track': [
-        { name: 'Classic', desc_zh: '经典轨迹风格', desc_en: 'Classic Track Map', img: 'images/hud/track/classic.png' },
-        { name: 'Glass Explorer', desc_zh: '玻璃探索者风格', desc_en: 'Glass Explorer Map', img: 'images/hud/track/glass-explorer.png' },
-        { name: 'Tactical Radar', desc_zh: '战术雷达风格', desc_en: 'Tactical Radar Map', img: 'images/hud/track/tactical-radar.png' },
-        { name: 'Pro Racing', desc_zh: '专业竞速风格', desc_en: 'Pro Racing Map', img: 'images/hud/track/pro-racing.png' },
-        { name: 'Hologram Blueprint', desc_zh: '全息蓝图风格', desc_en: 'Hologram Blueprint Map', img: 'images/hud/track/hologram-blueprint.png' },
-        { name: 'Retro Matrix', desc_zh: '复古点阵风格', desc_en: 'Retro Matrix Map', img: 'images/hud/track/retro-matrix.png' },
-        { name: 'Aurora Neon', desc_zh: '幻彩霓虹风格', desc_en: 'Aurora Neon Map', img: 'images/hud/track/aurora-neon.png' },
-        { name: 'Frosted Dewdrop', desc_zh: '晨露磨砂风格', desc_en: 'Frosted Dewdrop Map', img: 'images/hud/track/frosted-dewdrop.png' },
-        { name: 'Polaroid Journey', desc_zh: '拍立得相纸风格', desc_en: 'Polaroid Journey Map', img: 'images/hud/track/polaroid-journey.png' },
+        { name: 'Classic', desc_zh: '经典（珍珠标记 + 彗尾）', desc_en: 'Classic (Pearl + Comet)', img: 'images/hud/track/classic.png' },
+        { name: 'Tactical Radar', desc_zh: '战术雷达', desc_en: 'Tactical Radar', img: 'images/hud/track/tactical-radar.png' },
+        { name: 'Pro Racing', desc_zh: '专业赛车', desc_en: 'Pro Racing', img: 'images/hud/track/pro-racing.png' },
+        { name: 'Hologram Blueprint', desc_zh: '全息蓝图', desc_en: 'Hologram Blueprint', img: 'images/hud/track/hologram-blueprint.png' },
+        { name: 'Retro Matrix', desc_zh: '复古点阵', desc_en: 'Retro Matrix', img: 'images/hud/track/retro-matrix.png' },
+        { name: 'Aurora Neon', desc_zh: '幻彩霓虹', desc_en: 'Aurora Neon', img: 'images/hud/track/aurora-neon.png' },
     ],
     'data-nerd': [
-        { name: 'Slipspace Console', desc_zh: '超光速飞船控制台风格', desc_en: 'Slipspace Console', img: 'images/hud/data-nerd/slipspace-console.png' },
-        { name: 'Le Tour Dashboard', desc_zh: '环法专业底栏风格', desc_en: 'Le Tour Dashboard', img: 'images/hud/data-nerd/le-tour-dashboard.png' },
-        { name: 'Space UI', desc_zh: '太空悬浮胶囊风格', desc_en: 'Space UI', img: 'images/hud/data-nerd/space-ui.png' },
+        { name: 'Le Tour Dashboard', desc_zh: '环法专业底栏', desc_en: 'Le Tour Dashboard', img: 'images/hud/data-nerd/le-tour-dashboard.png' },
+        { name: 'Space UI', desc_zh: '太空悬浮胶囊', desc_en: 'Space UI', img: 'images/hud/data-nerd/space-ui.png' },
     ],
 };
 
@@ -1071,16 +1256,14 @@ function renderCategories() {
 
 function renderGallery() {
     const gallery = document.getElementById('hudGallery');
-    const items = hudData[activeCategory] || [];
+    const items = (hudData[activeCategory] || []).filter(item => item.img);
     gallery.innerHTML = items.map(item => {
         const desc = currentLang === 'zh' ? item.desc_zh : item.desc_en;
-        const previewContent = item.img
-            ? `<img src="${item.img}" alt="${item.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder-text" style="display:none;flex-direction:column;align-items:center"><svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>${desc}</div>`
-            : `<div class="placeholder-text" style="display:flex;flex-direction:column;align-items:center"><svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>${desc}</div>`;
         return `
         <div class="hud-card fade-in visible">
             <div class="hud-card-preview">
-                ${previewContent}
+                ${item.isNew ? '<span class="new-style-badge">NEW</span>' : ''}
+                <img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.closest('.hud-card').remove()">
             </div>
             <div class="hud-card-info">
                 <h4>${item.name}</h4>
